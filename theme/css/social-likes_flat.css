@@ -1,0 +1,9 @@
+.sns-btn-list {
+	overflow: hidden;
+}
+.sns-btn-list li{
+	float: left;
+	margin-top: 0.5rem;
+	margin-right: 1rem;
+	list-style: none;
+}
