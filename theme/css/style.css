@@ -123,6 +123,9 @@ transition: 0.5s all;
 color:#0099ff;
 }
 /*----*/
+.content{
+margin-bottom:3em;
+}
 .content,.about-content,.contact-content,.single{
 border-top:1px solid #d2d2d2;
 border-bottom:1px solid #d2d2d2;
