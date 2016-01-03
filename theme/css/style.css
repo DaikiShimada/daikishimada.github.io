@@ -123,7 +123,7 @@ transition: 0.5s all;
 color:#0099ff;
 }
 /*----*/
-.content{
+article.content{
 margin-bottom:3em;
 }
 .content,.about-content,.contact-content,.single{
