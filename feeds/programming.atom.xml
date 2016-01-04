@@ -6,12 +6,14 @@
 reStructuredText か Markdownでページ内容を記述できるのが魅力的です．&lt;/p&gt;
 &lt;p&gt;テーマはWordpressほどじゃないですが，それなりにあります．&lt;br /&gt;
 &lt;a href="http://www.pelicanthemes.com/"&gt;Pelican themes&lt;/a&gt;から好きなものを選ぶ事ができます．&lt;/p&gt;
-&lt;p&gt;Pythonユーザとして，
-- やる気出せばいじれないこともない
-- テーマがそこそこカッコいい
-- Markdownで記事が書ける
-- &lt;a href="http://docs.getpelican.com/en/3.6.3/"&gt;ドキュメント&lt;/a&gt;が充実している
-という理由で採用しました．&lt;/p&gt;
+&lt;p&gt;Pythonユーザとして，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;やる気出せばいじれないこともない&lt;/li&gt;
+&lt;li&gt;テーマがそこそこカッコいい&lt;/li&gt;
+&lt;li&gt;Markdownで記事が書ける&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/3.6.3/"&gt;ドキュメント&lt;/a&gt;が充実している
+という理由で採用しました．&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="pelican_1"&gt;Pelicanの導入&lt;/h2&gt;
 &lt;p&gt;pipを使えばあっという間．Markdownも入れておきます．&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install pelican Markdown
