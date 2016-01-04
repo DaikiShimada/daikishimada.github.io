@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="DaikiShimada" />
+    <meta name="robots" content="index, follow"/>
+    <meta name="keywords" content="article, pelican, web, python" />
+
+    <meta property="og:title" content="Pelican + Github Pages でブログを作った話"/>
+    <meta property="og:url" content="http://daikishimada.github.io/pelican-start.html"/>
+    <meta property="og:site_name" content="Futon note"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="http://daikishimada.github.io/theme/images/post.jpg" />
+    <meta property="og:description" content="Pelicanでこのサイトを作った時のメモ．" />
+
+    <link rel="canonical" href="http://daikishimada.github.io/pelican-start.html" />
+
+    <title>Pelican + Github Pages でブログを作った話 | Futon note</title>
+
+    <link rel="stylesheet" type="text/css" href="/theme/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/paginator.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/social-likes_flat.css" />
+
+    <script type="text/javascript" src="/theme/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/theme/js/social-likes.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="http://daikishimada.github.io/theme/css/tree.css" />
+    <link rel="stylesheet" type="text/css" href="http://daikishimada.github.io/theme/css/anchorific.css" />
+    <script type="text/javascript" src="http://daikishimada.github.io/theme/js/anchorific.js"></script>
+</head>
+<body id="index">
+<div class="header">  
+    <div class="container">
+        <div class="logo">
+            <a href="http://daikishimada.github.io/">
+                FUTON NOTE            </a>
+        </div>
+
+        <div class="top-menu">
+
+            <div class="search">
+
+<script>
+  (function() {
+    var cx = '003686732159763917286:2l2ibtzzycg';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="searchbox_003686732159763917286:2l2ibtzzycg" action="https://www.google.com/">
+    <input value="003686732159763917286:2l2ibtzzycg" name="cx" type="hidden" />
+    <input value="FORID:11" name="cof" type="hidden" />
+    <input id="q" name="q" type="text" required />
+    <input type="submit" value="">
+</form>
+
+            </div>
+
+            <span class="menu"> </span>
+                <ul>
+                            <li ><a href="http://daikishimada.github.io/pages/profile.html">PROFILE</a></li>
+                            <li ><a href="http://daikishimada.github.io/category/misc.html">MISC</a></li>
+                            <li class="active"><a href="http://daikishimada.github.io/category/programming.html">PROGRAMMING</a></li>
+
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <script>
+                $("span.menu").click(function(){
+                    $(".top-menu ul").slideToggle("slow" , function(){
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="container">
+                <div class="content-grids">
+<div class="single-main">
+
+    <div class="col-md-9 single-grid">
+
+        <header>
+<h4>
+    <a href="http://daikishimada.github.io/pelican-start.html" title="Pelican + Github Pages でブログを作った話">Pelican + Github Pages でブログを作った話</a>
+     1 05, 2015
+</h4>
+
+<div class="footer art-info">
+
+        Author: <a class="url fn" href="http://daikishimada.github.io/author/daikishimada.html">DaikiShimada</a> |
+
+    Category: <a href="http://daikishimada.github.io/category/programming.html">Programming</a>
+
+
+        | <a href="http://daikishimada.github.io/pelican-start.html#disqus_thread">Comments</a>
+
+    
+
+        <br />
+        Tags:         <a href="http://daikishimada.github.io/tag/pelican.html">pelican</a>
+        <a href="http://daikishimada.github.io/tag/web.html">web</a>
+        <a href="http://daikishimada.github.io/tag/python.html">python</a>
+
+</div><!-- http://itra.jp/jquery_socialbutton_plugin/ -->
+<script src="/theme/js/jquery.socialbutton-1.9.1.min.js" type="text/javascript"></script>
+
+<ul class="sns-btn-list">
+	<li class="hatena"></li>
+	<li class="tweet"></li>
+	<li class="facebook_like"></li>
+</ul>
+
+<script>
+  $(function () {
+      $('.tweet').socialbutton('twitter', {button: 'horizontal'});
+      $('.facebook_like').socialbutton('facebook_like', {button: 'button_count'});
+      $('.hatena').socialbutton('hatena');
+  });
+</script>
+        </header>
+
+        <article class="content">
+
+
+            <p>Pelicanでこのサイトを作った時のメモ．</p>
+<h2 id="pelican">Pelicanとは？</h2>
+<p><a href="https://github.com/getpelican/pelican/tree/3.4.0">getpelican/pelican at 3.4.0</a>は，Pythonで作られた静的webサイトジェネレータです．</p>
+<p>フランス語の"notebook"を意味する"calepin"から名付けられたらしい．<br />
+reStructuredText か Markdownでページ内容を記述できるのが魅力的です．</p>
+<p>テーマはWordpressほどじゃないですが，それなりにあります．<br />
+<a href="http://www.pelicanthemes.com/">Pelican themes</a>から好きなものを選ぶ事ができます．</p>
+<p>Pythonユーザとして，
+- やる気出せばいじれないこともない
+- テーマがそこそこカッコいい
+- Markdownで記事が書ける
+- <a href="http://docs.getpelican.com/en/3.6.3/">ドキュメント</a>が充実している
+という理由で採用しました．</p>
+<h2 id="pelican_1">Pelicanの導入</h2>
+<p>pipを使えばあっという間．Markdownも入れておきます．</p>
+<div class="highlight"><pre><span class="nv">$ </span>pip install pelican Markdown
+</pre></div>
+
+
+<p>インタラクティブなコマンドツールで初期設定を済ましてくれます．</p>
+<div class="highlight"><pre><span class="nv">$ </span>mkdir ./blog
+<span class="nv">$ </span><span class="nb">cd </span>blog
+<span class="nv">$ </span>pelican-quickstart
+</pre></div>
+
+
+<p>以下のような形で質問に回答しました．</p>
+<div class="highlight"><pre>Welcome to pelican-quickstart v3.6.3.
+
+This script will help you create a new Pelican-based website.
+
+Please answer the following questions so this script can generate the files
+needed by Pelican.
+
+
+&gt; Where do you want to create your new web site? [.] .
+&gt; &gt; What will be the title of this web site? Futon note
+&gt; &gt; Who will be the author of this web site? DaikiShimada
+&gt; &gt; What will be the default language of this web site? [en] ja
+&gt; &gt; Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) y
+&gt; &gt; What is your URL prefix? (see above example; no trailing slash) daikishimada.github.io
+&gt; &gt; Do you want to enable article pagination? (Y/n) y
+&gt; &gt; How many articles per page do you want? [10] 5
+&gt; &gt; What is your time zone? [Europe/Paris] Asia/Tokyo
+&gt; &gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) y
+&gt; &gt; Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development? (Y/n) n
+&gt; &gt; Do you want to upload your website using FTP? (y/N) n
+&gt; &gt; Do you want to upload your website using SSH? (y/N) n
+&gt; &gt; Do you want to upload your website using Dropbox? (y/N) n
+&gt; &gt; Do you want to upload your website using S3? (y/N) n
+&gt; &gt; Do you want to upload your website using Rackspace Cloud Files? (y/N) n
+&gt; &gt; Do you want to upload your website using GitHub Pages? (y/N) y
+&gt; &gt; Is this your personal page (username.github.io)? (y/N) y
+&gt; Done. Your new project is available at /Users/sheema/Documents/web/pelican-test
+</pre></div>
+
+
+<p>ここで，</p>
+<div class="highlight"><pre>&gt; &gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) y
+</pre></div>
+
+
+<p>と答えておくと，ディレクトリにHTML生成用のMakefileとfabfile.pyを生成してくれます．<br />
+makeコマンドやfabコマンドでHTMLを生成出来るようになるので，pelicanのオプションを毎回叩く必要がなくなる（はず）．</p>
+<p>あとは，<code>content/</code>以下に記事を書いていけばok.  </p>
+<p>ちなみに，ブログじゃないページは<code>content/pages/</code>にファイルを置いていけば良いみたいです．</p>
+<h3 id="_1">記事の生成と確認</h3>
+<p>Markdownからhtmlに書き出して欲しい時は，</p>
+<div class="highlight"><pre><span class="nv">$ </span>make html
+</pre></div>
+
+
+<p>でhtmlを吐き出してくれます．初期設定では<code>output/</code>以下に内容が出力されます．</p>
+<p>htmlの確認をする時は，</p>
+<div class="highlight"><pre><span class="nv">$ </span>make serve
+</pre></div>
+
+
+<p>とすると，http://localhost:8000でwebサーバを走らせてくれるので，表示などをローカル環境で確認できます．</p>
+<p>公開用にhtmlを吐き出したい時は，</p>
+<div class="highlight"><pre><span class="nv">$ </span>make publish
+</pre></div>
+
+
+<p>でやってくれます．</p>
+<h2 id="_2">テーマの導入</h2>
+<p>ロシア製のテーマ<a href="https://github.com/Samael500/w3-personal-blog">Samael500/w3-personal-blog</a>をお借りします．</p>
+<div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/Samael500/w3-personal-blog.git
+</pre></div>
+
+
+<p>ところどころ文言がロシア語なので，<code>w3-personal-blog/template/</code>内のファイルの一部を適宜書き換える．<br />
+ここが地味に大変だった…</p>
+<h3 id="pelican_2">pelican にテーマを反映</h3>
+<p><code>pelicanconf.py</code>にはサイトの設定を書き込む様になっています．<br />
+以下の記述をして，pelicanに使うテーマのディレクトリを知らせる．</p>
+<div class="highlight"><pre>THEME = &#39;./w3-personal-blog-master&#39;
+</pre></div>
+
+
+<h2 id="github-pages">Github Pages のリポジトリの準備</h2>
+<p>Github Pagesにはユーザが1つだけ持てるサイトとリポジトリ毎に作れるサイト(Project page)の2種類があります．<br />
+今回はユーザ用のサイトを作成しました．</p>
+<h3 id="_3">公開用リポジトリの作成</h3>
+<p>ユーザ用サイトは<code>ユーザ名.github.io</code>というリポジトリを作成すれば良いので，<code>daikihsimada.github.io</code>というリポジトリを作成．</p>
+<p>このリポジトリのmasterブランチにhtmlファイルをアップロードすると，自動的に<code>ユーザ名.github,io</code>というURLのwebサイトとしてアクセスができるようになります．</p>
+<h3 id="_4">ソース管理用リポジトリの作成</h3>
+<p>webサイトの公開自体は<code>ユーザ名.github.io</code>で行いますが，サイト生成に必要なMarkdownファイルやテーマ，pelicanの諸々のファイルは公開する必要が無いので，別のprivateなリポジトリで管理することにしました．</p>
+<p>pelicanをセットアップした<code>blog/</code>を管理用リポジトリで管理することにしました．</p>
+<div class="highlight"><pre>git init
+git remote add origin 管理用リポジトリ
+</pre></div>
+
+
+<p>それと，.gitignoreは以下のように．</p>
+<div class="highlight"><pre>*.pyc
+output/
+</pre></div>
+
+
+<h2 id="_5">サイトの公開</h2>
+<p><a href="https://github.com/davisp/ghp-import">davisp/ghp-import</a>というPythonモジュールを利用すれば，便利にGithub Pagesへのページ公開が行えます．</p>
+<div class="highlight"><pre>pip install ghp-import
+</pre></div>
+
+
+<p>適当に記事を書いて，公開してみる.</p>
+<div class="highlight"><pre><span class="nv">$ </span>make publish
+
+<span class="c"># outputディレクトリをgh-pagesブランチに</span>
+<span class="nv">$ </span>ghp-import output
+
+<span class="c"># gh-pagesブランチを公開リポジトリのmasterへpush</span>
+<span class="nv">$ </span>git push https://github.com/DaikiShimada/daikishimada.github.io.git gh-pages:master
+</pre></div>
+
+
+<p>テーマのカスタマイズにこだわると，時間はかかってしまいますが，
+比較的簡単にサイトを公開できます．</p>
+<p>テーマのカスタマイズも，Pythonユーザなら比較的わかりやすい記述になっているので，少しコードを読めば大丈夫だと思います．<br />
+vim で記事を書いてGitで記事のソースまで管理できてしまうので，精神衛生上すごく快適です．</p>
+<h2 id="_6">参考文献</h2>
+<ul>
+<li><a href="http://memo.laughk.org/2014/08/10/tinker2pelican-repo.html">ブログジェネレータをTinkererからPelicanに移行した - 続・ラフなラボ</a></li>
+<li><a href="http://draftcode.github.io/2012/03/16/42a4fd48-6f58-11e1-bdce-040ccee352e6.html">PelicanとGitHub Pagesを使う</a></li>
+<li><a href="http://dackdive.hateblo.jp/entry/2015/12/20/124055">[Python]PelicanでGitHub Pages上にブログを構築する(Django Girls for Everyone #2 参加メモ) - dackdive's blog</a></li>
+<li><a href="http://blog.sotm.jp/2014/01/04/Pelican-Markdown-GithubPages-install-guide/#github-pages_1">Pelican + Markdown + GitHub Pagesで管理するブログの作り方 - blog@sotm.jp</a></li>
+</ul>
+
+        </article>
+
+            <div class="comments">
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    var disqus_identifier = "pelican-start.html";
+                    (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//futonnote.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+            </div>
+    </div>
+    <div class="col-md-3 content-right">
+        <div class='anchorific'></div>
+    </div>
+</div>
+                </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            <p><a href="http://github.com/samael500/w3-personal-blog/">W3 Personal Blog</a> is a flat <a href="http://getbootstrap.com/">bootstrap</a> responsive theme designed by <a href="https://w3layouts.com/personal-blog-a-blogging-category-flat-bootstrap-responsive-web-template/">W3layouts</a> ported to a pelican by <a href="http://samael500.github.io/">Samael500</a>.<p>
+            <p>Copyrights © 2015 Futon note All rights reserved.</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-59884019-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'futonnote';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
