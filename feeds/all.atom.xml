@@ -1,29 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/all.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-01-02T04:00:00+09:00</updated><entry><title>初投稿</title><link href="http://daikishimada.github.io/first-post.html" rel="alternate"></link><updated>2016-01-02T04:00:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-01-02:first-post.html</id><summary type="html">&lt;p&gt;なんかもう，ブログを作るのは3つ目くらいなんだけれども，
-はてなも微妙にいじりづらい，Wordpressも管理とかプラグインとか辛いというわがままの結果，
-"Github pagesでホスティングをして，Markdownから静的にhtmlを吐いて"ブログを書くことにしてみました．&lt;/p&gt;
-&lt;p&gt;これなら，Gitで記事の管理もできるし(前は自分でGit経由でWPをポストするスクリプトを書いていた!!)，
-プロフィールのような記事じゃないページも好きな様に作ることが出来る．めでたし．&lt;/p&gt;
-&lt;h2 id="_1"&gt;知っていることを吐き出すということ&lt;/h2&gt;
-&lt;p&gt;去年は，何かやった記録やノウハウは全てEvernoteへ詰め込んでいて，
-別に外に見える形で記録をしなくても良いんじゃないかと思っていました．&lt;/p&gt;
-&lt;p&gt;しかし，他の方から何かを尋ねられることもあったり，
-自分でも"こういう文章があると色んな人が時間を無駄にせずすむよな"と思うこともあったりで，
-ちょっとしたことでも外からアクセスできる形で残しておくことにしました．&lt;/p&gt;
-&lt;h2 id="_2"&gt;書くこと&lt;/h2&gt;
-&lt;p&gt;当面は，時間があるときに研究で調べたことや，自分で興味があることについて備忘録的にまとめてみよう...&lt;/p&gt;
-&lt;p&gt;こういう文章がほしいなと思うものもあるので，
-少しずつ少しずつ書いては公開してみるものもあるかな...
-(特に，汎用人工知能&lt;AGI&gt;やConvolutional Neural Networksについては私の専門が近いながら体系的な文章が少ないので，少しずつ文章にしてみたい)&lt;/p&gt;
-&lt;p&gt;そういえば，これは数式が書けるのか？
-それとソースコードのハイライトはどんな感じで写るんだ...確認していなかった...&lt;/p&gt;
-&lt;h2 id="_3"&gt;サイト周りでやるべきこと&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;数式(LaTex)を表示できるようにする&lt;/li&gt;
-&lt;li&gt;プロフィールページを作る(ja/en)&lt;/li&gt;
-&lt;li&gt;pelican(このサイトのジェネレータ)について少し書く&lt;/li&gt;
-&lt;li&gt;DUSQUSを入れてみる(使う人いるのか？)&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="雑記"></category><category term="AI"></category><category term="研究"></category></entry><entry><title>Pelican + Github Pages でブログを作った話</title><link href="http://daikishimada.github.io/pelican-start.html" rel="alternate"></link><updated>2015-01-05T00:50:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2015-01-05:pelican-start.html</id><summary type="html">&lt;p&gt;Pelicanでこのサイトを作った時のメモ．&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/all.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-01-05T00:50:00+09:00</updated><entry><title>Pelican + Github Pages でブログを作った話</title><link href="http://daikishimada.github.io/pelican-start.html" rel="alternate"></link><updated>2016-01-05T00:50:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-01-05:pelican-start.html</id><summary type="html">&lt;p&gt;Pelicanでこのサイトを作った時のメモ．&lt;/p&gt;
 &lt;h2 id="pelican"&gt;Pelicanとは？&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://github.com/getpelican/pelican/tree/3.4.0"&gt;getpelican/pelican at 3.4.0&lt;/a&gt;は，Pythonで作られた静的webサイトジェネレータです．&lt;/p&gt;
 &lt;p&gt;フランス語の"notebook"を意味する"calepin"から名付けられたらしい．&lt;br /&gt;
@@ -170,4 +146,28 @@ vim で記事を書いてGitで記事のソースまで管理できてしまう�
 &lt;li&gt;&lt;a href="http://draftcode.github.io/2012/03/16/42a4fd48-6f58-11e1-bdce-040ccee352e6.html"&gt;PelicanとGitHub Pagesを使う&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://dackdive.hateblo.jp/entry/2015/12/20/124055"&gt;[Python]PelicanでGitHub Pages上にブログを構築する(Django Girls for Everyone #2 参加メモ) - dackdive's blog&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.sotm.jp/2014/01/04/Pelican-Markdown-GithubPages-install-guide/#github-pages_1"&gt;Pelican + Markdown + GitHub Pagesで管理するブログの作り方 - blog@sotm.jp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="pelican"></category><category term="web"></category><category term="python"></category></entry></feed>
+&lt;/ul&gt;</summary><category term="pelican"></category><category term="web"></category><category term="python"></category></entry><entry><title>初投稿</title><link href="http://daikishimada.github.io/first-post.html" rel="alternate"></link><updated>2016-01-02T04:00:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-01-02:first-post.html</id><summary type="html">&lt;p&gt;なんかもう，ブログを作るのは3つ目くらいなんだけれども，
+はてなも微妙にいじりづらい，Wordpressも管理とかプラグインとか辛いというわがままの結果，
+"Github pagesでホスティングをして，Markdownから静的にhtmlを吐いて"ブログを書くことにしてみました．&lt;/p&gt;
+&lt;p&gt;これなら，Gitで記事の管理もできるし(前は自分でGit経由でWPをポストするスクリプトを書いていた!!)，
+プロフィールのような記事じゃないページも好きな様に作ることが出来る．めでたし．&lt;/p&gt;
+&lt;h2 id="_1"&gt;知っていることを吐き出すということ&lt;/h2&gt;
+&lt;p&gt;去年は，何かやった記録やノウハウは全てEvernoteへ詰め込んでいて，
+別に外に見える形で記録をしなくても良いんじゃないかと思っていました．&lt;/p&gt;
+&lt;p&gt;しかし，他の方から何かを尋ねられることもあったり，
+自分でも"こういう文章があると色んな人が時間を無駄にせずすむよな"と思うこともあったりで，
+ちょっとしたことでも外からアクセスできる形で残しておくことにしました．&lt;/p&gt;
+&lt;h2 id="_2"&gt;書くこと&lt;/h2&gt;
+&lt;p&gt;当面は，時間があるときに研究で調べたことや，自分で興味があることについて備忘録的にまとめてみよう...&lt;/p&gt;
+&lt;p&gt;こういう文章がほしいなと思うものもあるので，
+少しずつ少しずつ書いては公開してみるものもあるかな...
+(特に，汎用人工知能&lt;AGI&gt;やConvolutional Neural Networksについては私の専門が近いながら体系的な文章が少ないので，少しずつ文章にしてみたい)&lt;/p&gt;
+&lt;p&gt;そういえば，これは数式が書けるのか？
+それとソースコードのハイライトはどんな感じで写るんだ...確認していなかった...&lt;/p&gt;
+&lt;h2 id="_3"&gt;サイト周りでやるべきこと&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;数式(LaTex)を表示できるようにする&lt;/li&gt;
+&lt;li&gt;プロフィールページを作る(ja/en)&lt;/li&gt;
+&lt;li&gt;pelican(このサイトのジェネレータ)について少し書く&lt;/li&gt;
+&lt;li&gt;DUSQUSを入れてみる(使う人いるのか？)&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="雑記"></category><category term="AI"></category><category term="研究"></category></entry></feed>
