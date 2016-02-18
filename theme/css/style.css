@@ -509,12 +509,12 @@ color:#fff;
 font-size: 1em;
 line-height: 1.8em;
 margin:1em 0;
-text-align:justify;
+/* text-align:justify; */
 }
 .single-grid h1,h2,h3,h4,h5,h6{
 font-family: 'Roboto', sans-serif;
 margin:1em 0;
-text-align:justify; 
+/* text-align:justify;  */
 }
 .single-grid ul,ol {
 font-size: 1em;
