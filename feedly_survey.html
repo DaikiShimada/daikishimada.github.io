@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="DaikiShimada" />
+    <meta name="robots" content="index, follow"/>
+    <meta name="keywords" content="article, paper, 研究, web, AI" />
+
+    <meta property="og:title" content="Feedly + arXiv でやる論文サーベイ"/>
+    <meta property="og:url" content="http://daikishimada.github.io/feedly_survey.html"/>
+    <meta property="og:site_name" content="Futon note"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="http://daikishimada.github.io/theme/images/post.jpg" />
+    <meta property="og:description" content="CNN系文献64本ノックの時に論文の探し方を聞かれたのでまとめました．" />
+
+    <link rel="canonical" href="http://daikishimada.github.io/feedly_survey.html" />
+
+    <title>Feedly + arXiv でやる論文サーベイ | Futon note</title>
+
+    <link rel="stylesheet" type="text/css" href="/theme/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/paginator.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/social-likes_flat.css" />
+
+    <script type="text/javascript" src="/theme/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/theme/js/social-likes.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="http://daikishimada.github.io/theme/css/tree.css" />
+    <link rel="stylesheet" type="text/css" href="http://daikishimada.github.io/theme/css/anchorific.css" />
+    <script type="text/javascript" src="http://daikishimada.github.io/theme/js/anchorific.js"></script>
+</head>
+<body id="index">
+<div class="header">  
+    <div class="container">
+        <div class="logo">
+            <a href="http://daikishimada.github.io/">
+                FUTON NOTE            </a>
+        </div>
+
+        <div class="top-menu">
+
+            <div class="search">
+
+<script>
+  (function() {
+    var cx = '003686732159763917286:2l2ibtzzycg';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="searchbox_003686732159763917286:2l2ibtzzycg" action="https://www.google.com/">
+    <input value="003686732159763917286:2l2ibtzzycg" name="cx" type="hidden" />
+    <input value="FORID:11" name="cof" type="hidden" />
+    <input id="q" name="q" type="text" required />
+    <input type="submit" value="">
+</form>
+
+            </div>
+
+            <span class="menu"> </span>
+                <ul>
+                            <li ><a href="http://daikishimada.github.io/pages/profile.html">PROFILE</a></li>
+                            <li ><a href="http://daikishimada.github.io/category/misc.html">MISC</a></li>
+                            <li ><a href="http://daikishimada.github.io/category/programming.html">PROGRAMMING</a></li>
+                            <li class="active"><a href="http://daikishimada.github.io/category/research.html">RESEARCH</a></li>
+
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <script>
+                $("span.menu").click(function(){
+                    $(".top-menu ul").slideToggle("slow" , function(){
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="container">
+                <div class="content-grids">
+<div class="single-main">
+
+    <div class="col-md-9 single-grid">
+
+        <header>
+<h4>
+    <a href="http://daikishimada.github.io/feedly_survey.html" title="Feedly + arXiv でやる論文サーベイ">Feedly + arXiv でやる論文サーベイ</a>
+     2 18, 2016
+</h4>
+
+<div class="footer art-info">
+
+        Author: <a class="url fn" href="http://daikishimada.github.io/author/daikishimada.html">DaikiShimada</a> |
+
+    Category: <a href="http://daikishimada.github.io/category/research.html">Research</a>
+
+
+        | <a href="http://daikishimada.github.io/feedly_survey.html#disqus_thread">Comments</a>
+
+    
+
+        <br />
+        Tags:         <a href="http://daikishimada.github.io/tag/paper.html">paper</a>
+        <a href="http://daikishimada.github.io/tag/yan-jiu.html">研究</a>
+        <a href="http://daikishimada.github.io/tag/web.html">web</a>
+        <a href="http://daikishimada.github.io/tag/ai.html">AI</a>
+
+</div><!-- http://itra.jp/jquery_socialbutton_plugin/ -->
+<script src="/theme/js/jquery.socialbutton-1.9.1.min.js" type="text/javascript"></script>
+
+<ul class="sns-btn-list">
+	<li class="hatena"></li>
+	<li class="tweet"></li>
+	<li class="facebook_like"></li>
+</ul>
+
+<script>
+  $(function () {
+      $('.tweet').socialbutton('twitter', {button: 'horizontal'});
+      $('.facebook_like').socialbutton('facebook_like', {button: 'button_count'});
+      $('.hatena').socialbutton('hatena');
+  });
+</script>
+        </header>
+
+        <article class="content">
+
+
+            <p>この前，<a href="http://daikishimada.github.io/wbaflcnn.html">Convolutional Neural Networksのサーベイを発表した時</a>，<br />
+論文(コンピュータサイエンス系)の探し方を随分と聞かれたので，まとめてみました．  </p>
+<p>主にFeedlyでarXivみるっていう話ですけど，<br />
+他の情報収集元もあげてみます．</p>
+<h2 id="feedly">Feedly</h2>
+<p><a href="http://feedly.com">Feedly</a>は，RSSリーダです．<br />
+もちろん，論文サーベイ以外にもRSSリーダとして使えるので，おすすめ．</p>
+<p>（<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fdaikishimada.github.io%2Ffeeds%2Fall.atom.xml">ホームにあるFollowボタンは，Feedlyのこのブログの購読ボタンだったりする</a>）</p>
+<h2 id="arxiv">arXiv</h2>
+<blockquote>
+<p><a href="http://arxiv.org/">arXiv</a>（アーカイヴ、archiveと同じ発音）は、物理学、数学、計算機科学、量的生物学、Quantitative Finance, 統計学の、プレプリントを含む様々な論文が保存・公開されているウェブサイトである。論文のアップロード（投稿）、ダウンロード（閲覧）ともに無料で、論文はPDF形式である。1991年にスタートして、プレプリント・サーバーの先駆けとなったウェブサイトである。大文字の X をギリシャ文字のカイ（Χ）にかけて archive と読ませている。
+<a href="https://ja.wikipedia.org/wiki/ArXiv">arXiv - Wikipedia</a></p>
+</blockquote>
+<p>私がよくチェックする機械学習やコンピュータビジョン界隈では，arXivの存在はかなり知られていて，大きな国際会議に投稿されたものがアップロードされていたりします．<br />
+webに論文をあげるので，後から修正や補足が出来る様になっていることも，良いポイントだと思います．</p>
+<h2 id="feedlyarxiv">FeedlyでarXivをトラッキングする</h2>
+<p>簡単にFeedlyでarXivの好きなサブジェクトを追いかける方法をまとめます．<br />
+（あらかじめFeedlyの会員登録がされている体で話を進めます）</p>
+<p>例として，<a href="http://arxiv.org/corr/home">Computing Research Repository</a>の<a href="http://arxiv.org/list/cs.AI/recent">Artificial Intelligence (cs.AI)</a>をFeedlyに登録してみます．<br />
+（CoRRのサブジェクトは全部で<a href="http://arxiv.org/corr/subjectclasses">こんなに</a>ある）</p>
+<ul>
+<li>
+<p>arXivにアクセス<br />
+<img alt="arXivにアクセス" src="https://www.evernote.com/l/AQCtPOQuqwRBLbFghoivStlyfAIGojywMbwB/image.png" /></p>
+</li>
+<li>
+<p><a href="http://arxiv.org/corr/home">Computing Research Repository</a>の<a href="http://arxiv.org/list/cs.AI/recent">Artificial Intelligence (cs.AI)</a>へアクセス<br />
+<img alt="csAIへアクセス" src="https://www.evernote.com/l/AQBo0xAaPi1MJZNLAeLr5gPGwZaM6ny6A8oB/image.png" /></p>
+</li>
+<li>
+<p>URLをコピーして置く<br />
+<img alt="URLをコピーして置く" src="https://www.evernote.com/l/AQAePkFajEJCKKP45CYFEolVWZNbT-L5EI8B/image.png" /></p>
+</li>
+<li>
+<p>Feedlyを開いて Add Contentをクリック<br />
+<img alt="FeedlyのAddContentをクリック" src="https://www.evernote.com/l/AQB7CvAm-rBI4pGAEn2QlWIWhFgdHg2GMj0B/image.png" /></p>
+</li>
+<li>
+<p>検索窓に購読したいページのURLを入力<br />
+<img alt="検索窓に購読したいページのURLを入力" src="https://www.evernote.com/l/AQAecTpbRY9AeJw5dqa6TYFvxr6Mier_K0oB/image.png" /><br />
+<img alt="入力ごEnter" src="https://www.evernote.com/l/AQANGZ23_GlH1LDX3OA7RazlEkyeet2OvTcB/image.png" /></p>
+</li>
+<li>
+<p>+を押してFeedlyへの登録画面へ
+<img alt="+を押してFeedlyへの登録画面へ" src="https://www.evernote.com/l/AQBuUm7gaL5GF7Lo6EGKmTy6TT7Tq_v9E0EB/image.png" /></p>
+</li>
+<li>
+<p>追加するコレクションを選んでAddを推す
+<img alt="追加するコレクションを選んでAddを推す" src="https://www.evernote.com/l/AQCjCjJ9cMVIPZNTSQhhFQrT47iy8ZgI8yIB/image.png" /></p>
+</li>
+</ul>
+<p>これでFeedlyで論文がトラックできるようになっているはず．<br />
+他のサブジェクトを登録したい場合はさっきまでの作業を繰り返せばOKです．</p>
+<p>こんな感じ．
+もし，"by ~"の左に数字が出ているときはそれは「<a href="https://feedly.uservoice.com/knowledgebase/articles/178821-what-does-the-number-of-green-hearts-mean">engagement</a>」を示す数字です．<br />
+その論文がどれくらいバズっているかわかるので，私がFeedlyを使う理由の一つでもあったりします．
+<img alt="こんな感じ" src="https://www.evernote.com/l/AQAwGNBx0oVHWrU_v4-eQ2LuMCDmXP38E7EB/image.png" /></p>
+<p>記事をクリックすれば，アブストラクトも読める！<br />
+<img alt="記事をクリックすればアブストラクトも読める" src="https://www.evernote.com/l/AQCXJIngh0lN5KqsxuGDjGuzYhXtYbzVa9gB/image.png" /></p>
+<p>"Visit Website" をクリックすれば，arXivの該当ページに飛んで，pdfやbibtexのファイルを入手出来ます．やったね！
+<img alt="VisitWebsite" src="https://www.evernote.com/l/AQBd3Vae5WhKRK9t0TTr4rVGNwDa5VHMZp0B/image.png" /></p>
+<h2 id="reddit">Redditで技術系のスレッドを見つける</h2>
+<p>arXivの話だけだと寂しいので，他の情報収集元を言うと，<br />
+Redditの機械学習系の議論はたまに目を通します．</p>
+<p>なかなか面白い議論のときもあれば，過疎ってるときもあるけど…</p>
+<blockquote>
+<p>reddit（レディット）は英語圏のウェブサイト。ニュース記事、画像のリンクやテキストを投稿し、コメントをつけることが可能。ウェブサイトへのリンクを収集・公開するソーシャルブックマークサイト。ニュース記事、画像などの紹介や感想募集のトピックを誰でも立てられるソーシャルニュースサイトでもあり、トピックについてのコメントを誰でも書き込める電子掲示板の一種でもある。 <a href="https://ja.wikipedia.org/wiki/Reddit">reddit - Wikipedia</a></p>
+</blockquote>
+<p><a href="https://twitter.com/mxlearn">ML@REDDIT</a>をフォローすると，<br />
+機械学習系のスレッドがどんどん流れてくるので，チェックしています．</p>
+
+        </article>
+
+            <div class="comments">
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    var disqus_identifier = "feedly_survey.html";
+                    (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//futonnote.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+            </div>
+    </div>
+    <div class="col-md-3 content-right">
+        <div class='anchorific'></div>
+    </div>
+</div>
+                </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            <p><a href="http://github.com/samael500/w3-personal-blog/">W3 Personal Blog</a> is a flat <a href="http://getbootstrap.com/">bootstrap</a> responsive theme designed by <a href="https://w3layouts.com/personal-blog-a-blogging-category-flat-bootstrap-responsive-web-template/">W3layouts</a> ported to a pelican by <a href="http://samael500.github.io/">Samael500</a>.<p>
+            <p>Copyrights © 2015 Futon note All rights reserved.</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-59884019-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'futonnote';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

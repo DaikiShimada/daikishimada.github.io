@@ -1,5 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/research.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-02-18T17:00:00+09:00</updated><entry><title>Deep Learning のトレンドについて喋ってきた</title><link href="http://daikishimada.github.io/wbaflcnn.html" rel="alternate"></link><updated>2016-02-18T17:00:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-18:wbaflcnn.html</id><summary type="html">&lt;p&gt;Convolutional Neural NetworksのトレンドについてCasualじゃない話をしてきました．&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/research.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-02-18T17:00:00+09:00</updated><entry><title>Feedly + arXiv でやる論文サーベイ</title><link href="http://daikishimada.github.io/feedly_survey.html" rel="alternate"></link><updated>2016-02-18T17:00:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-18:feedly_survey.html</id><summary type="html">&lt;p&gt;この前，&lt;a href="http://daikishimada.github.io/wbaflcnn.html"&gt;Convolutional Neural Networksのサーベイを発表した時&lt;/a&gt;，&lt;br /&gt;
+論文(コンピュータサイエンス系)の探し方を随分と聞かれたので，まとめてみました．  &lt;/p&gt;
+&lt;p&gt;主にFeedlyでarXivみるっていう話ですけど，&lt;br /&gt;
+他の情報収集元もあげてみます．&lt;/p&gt;
+&lt;h2 id="feedly"&gt;Feedly&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://feedly.com"&gt;Feedly&lt;/a&gt;は，RSSリーダです．&lt;br /&gt;
+もちろん，論文サーベイ以外にもRSSリーダとして使えるので，おすすめ．&lt;/p&gt;
+&lt;p&gt;（&lt;a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fdaikishimada.github.io%2Ffeeds%2Fall.atom.xml"&gt;ホームにあるFollowボタンは，Feedlyのこのブログの購読ボタンだったりする&lt;/a&gt;）&lt;/p&gt;
+&lt;h2 id="arxiv"&gt;arXiv&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="http://arxiv.org/"&gt;arXiv&lt;/a&gt;（アーカイヴ、archiveと同じ発音）は、物理学、数学、計算機科学、量的生物学、Quantitative Finance, 統計学の、プレプリントを含む様々な論文が保存・公開されているウェブサイトである。論文のアップロード（投稿）、ダウンロード（閲覧）ともに無料で、論文はPDF形式である。1991年にスタートして、プレプリント・サーバーの先駆けとなったウェブサイトである。大文字の X をギリシャ文字のカイ（Χ）にかけて archive と読ませている。
+&lt;a href="https://ja.wikipedia.org/wiki/ArXiv"&gt;arXiv - Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;私がよくチェックする機械学習やコンピュータビジョン界隈では，arXivの存在はかなり知られていて，大きな国際会議に投稿されたものがアップロードされていたりします．&lt;br /&gt;
+webに論文をあげるので，後から修正や補足が出来る様になっていることも，良いポイントだと思います．&lt;/p&gt;
+&lt;h2 id="feedlyarxiv"&gt;FeedlyでarXivをトラッキングする&lt;/h2&gt;
+&lt;p&gt;簡単にFeedlyでarXivの好きなサブジェクトを追いかける方法をまとめます．&lt;br /&gt;
+（あらかじめFeedlyの会員登録がされている体で話を進めます）&lt;/p&gt;
+&lt;p&gt;例として，&lt;a href="http://arxiv.org/corr/home"&gt;Computing Research Repository&lt;/a&gt;の&lt;a href="http://arxiv.org/list/cs.AI/recent"&gt;Artificial Intelligence (cs.AI)&lt;/a&gt;をFeedlyに登録してみます．&lt;br /&gt;
+（CoRRのサブジェクトは全部で&lt;a href="http://arxiv.org/corr/subjectclasses"&gt;こんなに&lt;/a&gt;ある）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;arXivにアクセス&lt;br /&gt;
+&lt;img alt="arXivにアクセス" src="https://www.evernote.com/l/AQCtPOQuqwRBLbFghoivStlyfAIGojywMbwB/image.png" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://arxiv.org/corr/home"&gt;Computing Research Repository&lt;/a&gt;の&lt;a href="http://arxiv.org/list/cs.AI/recent"&gt;Artificial Intelligence (cs.AI)&lt;/a&gt;へアクセス&lt;br /&gt;
+&lt;img alt="csAIへアクセス" src="https://www.evernote.com/l/AQBo0xAaPi1MJZNLAeLr5gPGwZaM6ny6A8oB/image.png" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;URLをコピーして置く&lt;br /&gt;
+&lt;img alt="URLをコピーして置く" src="https://www.evernote.com/l/AQAePkFajEJCKKP45CYFEolVWZNbT-L5EI8B/image.png" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Feedlyを開いて Add Contentをクリック&lt;br /&gt;
+&lt;img alt="FeedlyのAddContentをクリック" src="https://www.evernote.com/l/AQB7CvAm-rBI4pGAEn2QlWIWhFgdHg2GMj0B/image.png" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;検索窓に購読したいページのURLを入力&lt;br /&gt;
+&lt;img alt="検索窓に購読したいページのURLを入力" src="https://www.evernote.com/l/AQAecTpbRY9AeJw5dqa6TYFvxr6Mier_K0oB/image.png" /&gt;&lt;br /&gt;
+&lt;img alt="入力ごEnter" src="https://www.evernote.com/l/AQANGZ23_GlH1LDX3OA7RazlEkyeet2OvTcB/image.png" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;+を押してFeedlyへの登録画面へ
+&lt;img alt="+を押してFeedlyへの登録画面へ" src="https://www.evernote.com/l/AQBuUm7gaL5GF7Lo6EGKmTy6TT7Tq_v9E0EB/image.png" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;追加するコレクションを選んでAddを推す
+&lt;img alt="追加するコレクションを選んでAddを推す" src="https://www.evernote.com/l/AQCjCjJ9cMVIPZNTSQhhFQrT47iy8ZgI8yIB/image.png" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これでFeedlyで論文がトラックできるようになっているはず．&lt;br /&gt;
+他のサブジェクトを登録したい場合はさっきまでの作業を繰り返せばOKです．&lt;/p&gt;
+&lt;p&gt;こんな感じ．
+もし，"by ~"の左に数字が出ているときはそれは「&lt;a href="https://feedly.uservoice.com/knowledgebase/articles/178821-what-does-the-number-of-green-hearts-mean"&gt;engagement&lt;/a&gt;」を示す数字です．&lt;br /&gt;
+その論文がどれくらいバズっているかわかるので，私がFeedlyを使う理由の一つでもあったりします．
+&lt;img alt="こんな感じ" src="https://www.evernote.com/l/AQAwGNBx0oVHWrU_v4-eQ2LuMCDmXP38E7EB/image.png" /&gt;&lt;/p&gt;
+&lt;p&gt;記事をクリックすれば，アブストラクトも読める！&lt;br /&gt;
+&lt;img alt="記事をクリックすればアブストラクトも読める" src="https://www.evernote.com/l/AQCXJIngh0lN5KqsxuGDjGuzYhXtYbzVa9gB/image.png" /&gt;&lt;/p&gt;
+&lt;p&gt;"Visit Website" をクリックすれば，arXivの該当ページに飛んで，pdfやbibtexのファイルを入手出来ます．やったね！
+&lt;img alt="VisitWebsite" src="https://www.evernote.com/l/AQBd3Vae5WhKRK9t0TTr4rVGNwDa5VHMZp0B/image.png" /&gt;&lt;/p&gt;
+&lt;h2 id="reddit"&gt;Redditで技術系のスレッドを見つける&lt;/h2&gt;
+&lt;p&gt;arXivの話だけだと寂しいので，他の情報収集元を言うと，&lt;br /&gt;
+Redditの機械学習系の議論はたまに目を通します．&lt;/p&gt;
+&lt;p&gt;なかなか面白い議論のときもあれば，過疎ってるときもあるけど…&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;reddit（レディット）は英語圏のウェブサイト。ニュース記事、画像のリンクやテキストを投稿し、コメントをつけることが可能。ウェブサイトへのリンクを収集・公開するソーシャルブックマークサイト。ニュース記事、画像などの紹介や感想募集のトピックを誰でも立てられるソーシャルニュースサイトでもあり、トピックについてのコメントを誰でも書き込める電子掲示板の一種でもある。 &lt;a href="https://ja.wikipedia.org/wiki/Reddit"&gt;reddit - Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/mxlearn"&gt;ML@REDDIT&lt;/a&gt;をフォローすると，&lt;br /&gt;
+機械学習系のスレッドがどんどん流れてくるので，チェックしています．&lt;/p&gt;</summary><category term="paper"></category><category term="研究"></category><category term="web"></category><category term="AI"></category></entry><entry><title>Deep Learning のトレンドについて喋ってきた</title><link href="http://daikishimada.github.io/wbaflcnn.html" rel="alternate"></link><updated>2016-02-18T17:00:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-18:wbaflcnn.html</id><summary type="html">&lt;p&gt;Convolutional Neural NetworksのトレンドについてCasualじゃない話をしてきました．&lt;/p&gt;
 &lt;h2 id="_1"&gt;全脳アーキテクチャ若手の会カジュアルトーク&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://wbawakate.jp/posts/events/12th/"&gt;全脳アーキテクチャ若手の会カジュアルトーク&lt;/a&gt;
 というところでお話をしてきました．&lt;br /&gt;
