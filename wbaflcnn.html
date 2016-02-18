@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="DaikiShimada" />
+    <meta name="robots" content="index, follow"/>
+    <meta name="keywords" content="article, deeplearning" />
+
+    <meta property="og:title" content="Deep Learning のトレンドについて喋ってきた"/>
+    <meta property="og:url" content="http://daikishimada.github.io/wbaflcnn.html"/>
+    <meta property="og:site_name" content="Futon note"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="http://daikishimada.github.io/theme/images/post.jpg" />
+    <meta property="og:description" content="Convolutional Neural Networks のトレンドについてCasualじゃない話をしてきました．" />
+
+    <link rel="canonical" href="http://daikishimada.github.io/wbaflcnn.html" />
+
+    <title>Deep Learning のトレンドについて喋ってきた | Futon note</title>
+
+    <link rel="stylesheet" type="text/css" href="/theme/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/paginator.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/social-likes_flat.css" />
+
+    <script type="text/javascript" src="/theme/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/theme/js/social-likes.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="http://daikishimada.github.io/theme/css/tree.css" />
+    <link rel="stylesheet" type="text/css" href="http://daikishimada.github.io/theme/css/anchorific.css" />
+    <script type="text/javascript" src="http://daikishimada.github.io/theme/js/anchorific.js"></script>
+</head>
+<body id="index">
+<div class="header">  
+    <div class="container">
+        <div class="logo">
+            <a href="http://daikishimada.github.io/">
+                FUTON NOTE            </a>
+        </div>
+
+        <div class="top-menu">
+
+            <div class="search">
+
+<script>
+  (function() {
+    var cx = '003686732159763917286:2l2ibtzzycg';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="searchbox_003686732159763917286:2l2ibtzzycg" action="https://www.google.com/">
+    <input value="003686732159763917286:2l2ibtzzycg" name="cx" type="hidden" />
+    <input value="FORID:11" name="cof" type="hidden" />
+    <input id="q" name="q" type="text" required />
+    <input type="submit" value="">
+</form>
+
+            </div>
+
+            <span class="menu"> </span>
+                <ul>
+                            <li ><a href="http://daikishimada.github.io/pages/profile.html">PROFILE</a></li>
+                            <li ><a href="http://daikishimada.github.io/category/misc.html">MISC</a></li>
+                            <li ><a href="http://daikishimada.github.io/category/programming.html">PROGRAMMING</a></li>
+                            <li class="active"><a href="http://daikishimada.github.io/category/research.html">RESEARCH</a></li>
+
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <script>
+                $("span.menu").click(function(){
+                    $(".top-menu ul").slideToggle("slow" , function(){
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="container">
+                <div class="content-grids">
+<div class="single-main">
+
+    <div class="col-md-9 single-grid">
+
+        <header>
+<h4>
+    <a href="http://daikishimada.github.io/wbaflcnn.html" title="Deep Learning のトレンドについて喋ってきた">Deep Learning のトレンドについて喋ってきた</a>
+     2 18, 2016
+</h4>
+
+<div class="footer art-info">
+
+        Author: <a class="url fn" href="http://daikishimada.github.io/author/daikishimada.html">DaikiShimada</a> |
+
+    Category: <a href="http://daikishimada.github.io/category/research.html">Research</a>
+
+
+        | <a href="http://daikishimada.github.io/wbaflcnn.html#disqus_thread">Comments</a>
+
+    
+
+        <br />
+        Tags:         <a href="http://daikishimada.github.io/tag/deeplearning.html">deeplearning</a>
+
+</div><!-- http://itra.jp/jquery_socialbutton_plugin/ -->
+<script src="/theme/js/jquery.socialbutton-1.9.1.min.js" type="text/javascript"></script>
+
+<ul class="sns-btn-list">
+	<li class="hatena"></li>
+	<li class="tweet"></li>
+	<li class="facebook_like"></li>
+</ul>
+
+<script>
+  $(function () {
+      $('.tweet').socialbutton('twitter', {button: 'horizontal'});
+      $('.facebook_like').socialbutton('facebook_like', {button: 'button_count'});
+      $('.hatena').socialbutton('hatena');
+  });
+</script>
+        </header>
+
+        <article class="content">
+
+
+            <p>Convolutional Neural NetworksのトレンドについてCasualじゃない話をしてきました．</p>
+<h2 id="_1">全脳アーキテクチャ若手の会カジュアルトーク</h2>
+<p><a href="http://wbawakate.jp/posts/events/12th/">全脳アーキテクチャ若手の会カジュアルトーク</a>
+というところでお話をしてきました．<br />
+ちょっと層がわからなかったのですが，IT系のエンジニアの方が多かったみたいです．<br />
+（学生は4人くらい…？しかもほぼ身内）</p>
+<p>僕のスライドはSlide Shareの方にアップロードされています．<br />
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/NIXhrnmgjyU0xK" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/sheemap/convolutional-neural-networks-wbafl2" title="Convolutional Neural Networks のトレンド @WBAFLカジュアルトーク#2" target="_blank">Convolutional Neural Networks のトレンド @WBAFLカジュアルトーク#2</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/sheemap">Daiki Shimada</a></strong> </div></p>
+<p>しかも，映像もアップロードされていた…
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cBog5o9ebcQ" frameborder="0" allowfullscreen></iframe></p>
+<h2 id="_2">発表後記</h2>
+<p>実際はConvolutional Neural Networks(CNN)系論文128本ノックにするつもりだったとはいえない空気でしたね…</p>
+<p>個人的には画像生成やキャプション生成系の研究速度はとても速く進んでいると感じています．<br />
+Visual Turing Test の話はもう少し掘り下げたかったですね．  </p>
+<p>Deep Mind が DQNで３D一人称視点ゲームを遊ぶ話がちょうど発表直前に出ていて，alphaGoの話題とともに紹介しましたが，あの領域は完全にGoogleの独壇場かなと思います．</p>
+<p>本当にここ最近はすごいペースで研究が進んでいくので，どこかで一回整理しないといけないなっていう危機感があり，自分なりにまとめました．<br />
+サーベイってけっこう上手くやらないと労力使うし，大事な研究を見落とすこともあるので，こういう資料がだれかのサーベイの種なればいいなあ，なんて．<br />
+（各々，独自にまとめていって，こういう資料がどんどん増えることを願う）</p>
+<h2 id="_3">紹介文献一覧</h2>
+<h3 id="cnn">CNNアーキテクチャの変遷 / 最適化手法</h3>
+<h4 id="cnn_1">CNNアーキテクチャ</h4>
+<ul>
+<li>Neocognitron</li>
+<li>K. Fukushima. Neocognitron: A self-organizing neural network model for a mechanism of pattern recognition unaffected by shift in position. Biological Cybernetics 36, 1980.</li>
+<li>LeNet</li>
+<li>Y LeCun, L Bottou, Y Bengio, P Haffner. Gradient-based learning applied to document recognition. Proceedings of the IEEE 86, 1998.</li>
+<li>Ave./Max Pooling, Local Contrast Normalization</li>
+<li>K. Jarrett, K. Kavukcuoglu, M. Ranzato, Y. LeCun. What is the best multi-stage architecture for object recognition?. CVPR, 2009.</li>
+<li>ReLU</li>
+<li>X. Glorot, A. Bordes, Y. Bengio. Deep Sparse Rectifier Neural Networks. AISTATS 11, 2011.</li>
+<li>Dropout</li>
+<li>G. E. Hinton, N. Srivastava, A. Krizhevsky, I. Sutskever, R. R. Salakhutdinov. <a href="http://arxiv.org/abs/1207.0580">Improving neural networks by preventing co-adaptation of feature detectors</a>. arXiv: 1207.0580, 2012.</li>
+<li>AlexNet</li>
+<li>A. Krizhevsky, I. Sutskever, G. E. Hinton. ImageNet Classification with Deep Convolutional Neural Networks. NIPS, 2012.</li>
+<li>Network in Network, global ave. pooling</li>
+<li>M. Lin, Q. Chen, S. Yan. <a href="http://arxiv.org/abs/1312.4400">Network In Network</a>. arXiv: 1312.4400, 2013.</li>
+<li>VGG-Net</li>
+<li>K. Simonyan, A. Zisserman. <a href="http://arxiv.org/abs/1409.1556">Very Deep Convolutional Networks for Large-Scale Visual Recognition</a>. arXiv: 1409.1556, 2014.</li>
+<li>GoogLeNet / Inception</li>
+<li>C. Szegedy, W. Liu, Y. Jia, P. Sermanet, S. Reed, D. Anguelov, D. Erhan, V. Vanhoucke, A. Rabinovich. <a href="http://arxiv.org/abs/1409.4842">Going deeper with convolutions</a>. arXiv: 1409.4842, 2014.</li>
+<li>C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, Z. Wojna. <a href="http://arxiv.org/abs/1512.00567">Rethinking the Inception Architecture for Computer Vision</a>. arXiv: 1512.00567, 2015.</li>
+<li>SPP-Net</li>
+<li>K. He, X. Zhang, S. Ren, J. Sun. <a href="http://arxiv.org/abs/1406.4729">Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition</a>. arXiv: 1406.4729, 2014.</li>
+<li>All Convolutional Net, guided BackPropagation</li>
+<li>J. T. Springenberg, A. Dosovitskiy, T. Brox, M. Riedmiller. <a href="http://arxiv.org/abs/1412.6806">Striving for Simplicity: The All Convolutional Net</a>. arXiv: 1412.6806, 2014.</li>
+<li>Exemplar CNN</li>
+<li>A. Dosovitskiy, P. Fischer, J. T. Springenberg, M. Riedmiller, T. Brox. <a href="http://arxiv.org/abs/1406.6909">Discriminative Unsupervised Feature Learning with Exemplar Convolutional Neural Networks</a>. arXiv: 1406.6909, 2014.</li>
+<li>Triplet network</li>
+<li>E. Hoffer, N. Ailon. <a href="http://arxiv.org/abs/1412.6622">Deep metric learning using Triplet network</a>. arXiv: 1412.6622, 2014.</li>
+<li>Batch Normalization</li>
+<li>S. Ioffe, C. Szegedy. <a href="http://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>. arXiv: 1502.03167, 2015.</li>
+<li>Residual Network; ResNet</li>
+<li>K. He, X. Zhang, S. Ren, J. Sun. <a href="http://arxiv.org/abs/1512.03385">Deep Residual Learning for Image Recognition</a>. arXiv: 1512.03385, 2015.</li>
+</ul>
+<h4 id="_4">確率的勾配降下法における学習率調整法</h4>
+<ul>
+<li>AdaGrad</li>
+<li>J. Duchi, E. Hazan, Y. Singer. <a href="http://stanford.edu/~jduchi/projects/DuchiHaSi10_colt.pdf">Adaptive Subgradient Methods for Online Learning and Stochastic Optimization</a>. Journal of Machine Learning Research 12 ,2011.</li>
+<li>RMSProp</li>
+<li>T. Tieleman, G. Hinton. Divide the gradient by a running average of its recent magnitude. <a href="https://www.coursera.org/course/neuralnets">COURSERA: Neural Networks for Machine Learning 4</a>, 2012.</li>
+<li>AdaDelta</li>
+<li>M. D. Zeiler. <a href="http://arxiv.org/abs/1212.5701">ADADELTA: An Adaptive Learning Rate Method</a>. arXiv: 1212.5701, 2012.</li>
+<li>Adam</li>
+<li>D. Kingma, J. Ba. <a href="http://arxiv.org/abs/1412.6980">Adam: A Method for Stochastic Optimization</a>. arXiv: 1412.6980, 2014.</li>
+</ul>
+<h3 id="_5">特徴量の解析 / 可視化</h3>
+<ul>
+<li>DeconvNet for visualizing</li>
+<li>M.D. Zeiler, and R. Fergus. <a href="http://arxiv.org/abs/1311.2901">Visualizing and understanding convolutional networks</a>. arXiv,: 1311.2901, 2013.</li>
+<li>入力画像の最適化</li>
+<li>A. Mahendran, A. Vedaldi. <a href="http://arxiv.org/abs/1412.0035">Understanding Deep Image Representations by Inverting Them</a>. arXiv: 1412.0035, 2014.</li>
+<li>CNNをだます</li>
+<li>C. Szegedy, W. Zaremba, I. Sutskever, J. Bruna, D. Erhan, I. J. Goodfellow, R. Fergus. <a href="http://arxiv.org/abs/1312.6199">Intriguing properties of neural networks</a>. arXiv: 1312.6199, 2013.</li>
+<li>I. J. Goodfellow, J. Shlens, C. Szegedy. <a href="http://arxiv.org/abs/1412.6572">Explaining and Harnessing Adversarial Examples</a>. arXiv: 1412.6572, 2014.</li>
+<li>A. Nguyen, J. Yosinski, J. Clune. <a href="http://arxiv.org/abs/1412.1897">Deep Neural Networks are Easily Fooled: High Confidence Predictions for Unrecognizable Images</a>. arXiv: 1412.1897, 2014.</li>
+</ul>
+<h3 id="_6">物体検出・領域分割</h3>
+<ul>
+<li>R-CNN</li>
+<li>R. Girshick, J. Donahue, T. Darrell, J. Malik. <a href="http://arxiv.org/abs/1311.2524">Rich feature hierarchies for accurate object detection and semantic segmentation</a>. arXiv:1311.2524, 2013.</li>
+<li>Fast R-CNN</li>
+<li>R. Girshick. <a href="http://arxiv.org/abs/1504.08083">Fast R-CNN</a>. arXiv:1504.08083, 2015.</li>
+<li>Faster R-CNN</li>
+<li>S. Ren, K. He, R. Girshick, J. Sun. <a href="http://arxiv.org/abs/1506.01497">Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks</a>. arXiv:1506.01497, 2015.</li>
+<li>Fully Convolutional Networks (FCN)</li>
+<li>K. Simonyan, A. Vedaldi, A. Zisserman. <a href="http://arxiv.org/abs/1312.6034">Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps</a>. arXiv: 1312.6034, 2013.</li>
+<li>SegNet</li>
+<li>V. Badrinarayanan, A. Handa, R. Cipolla. <a href="http://arxiv.org/abs/1505.07293">SegNet: A Deep Convolutional Encoder-Decoder Architecture for Robust Semantic Pixel-Wise Labelling</a>. arXiv: 1505.07293, 2015.</li>
+<li>CNN + 条件付き確率場(CRF)</li>
+<li>] S. Zheng, S. Jayasumana, B. R. Paredes, V. Vineet, Z. Su, D. Du, C. Huang, P. H. S. Torr. <a href="http://arxiv.org/abs/1502.03240">Conditional Random Fields as Recurrent Neural Networks</a>. arXiv: 1502.03240, 2015.</li>
+<li>Deep Mask</li>
+<li>P. O. Pinheiro, R. Collobert, P. Dollar. <a href="http://arxiv.org/abs/1506.06204">Learning to Segment Object Candidates</a>. arXiv: 1506.06204, 2015.</li>
+<li>Deep Face</li>
+<li>Y. Taigman, M. Yang, M. A. Ranzato and L. Wolf. DeepFace: Closing the Gap to Human-Level Performance in Face Verification. CVPR, 2014.</li>
+<li>Spatial Transformer Networks</li>
+<li>M. Jaderberg, K. Simonyan, A. Zisserman, K. Kavukcuoglu. <a href="http://arxiv.org/abs/1506.02025">Spatial Transformer Networks</a>. arXiv: 1506.02025, 2015.</li>
+</ul>
+<h3 id="_7">画像生成・超解像</h3>
+<ul>
+<li>Deep Dream</li>
+<li><a href="http://googleresearch.blogspot.jp/2015/06/inceptionism-going-deeper-into-neural.html">Inceptionism: Going Deeper into Neural Networks</a>. </li>
+<li>K. Simonyan, A. Vedaldi, A. Zisserman. <a href="http://arxiv.org/abs/1312.6034">Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps</a>. arXiv: 1312.6034, 2013.</li>
+<li>モーフィング</li>
+<li>A. Dosovitskiy, J. T. Springenberg, M. Tatarchenko, T. Brox. <a href="http://arxiv.org/abs/1411.5928">Learning to Generate Chairs, Tables and Cars with Convolutional Networks</a>. arXiv: 1411.5928, 2014.</li>
+<li>画風変換</li>
+<li>L. A. Gatys, A. S. Ecker, M. Bethge. <a href="http://arxiv.org/abs/1508.06576">A Neural Algorithm of Artistic Style</a>. arXiv: 1508.06576, 2015.</li>
+<li>C. Li, M. Wand. <a href="http://arxiv.org/abs/1601.04589">Combining Markov Random Fields and Convolutional Neural Networks for Image Synthesis</a>. arXiv:1601.04589, 2016.</li>
+<li>画像生成とベクトル演算性</li>
+<li>A. Radford, L. Metz, S. Chintala. <a href="http://arxiv.org/abs/1511.06434">Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</a>. arXiv:1511.06434, 2015.</li>
+<li>超解像</li>
+<li>C. Dong, C. C. Loy, K. He, X. Tang. <a href="http://arxiv.org/abs/1501.00092">Image Super-Resolution Using Deep Convolutional Networks</a>. arXiv:1501.00092, 2015.</li>
+<li><a href="http://waifu2x.udp.jp/index.ja.html">waifu2x</a>.</li>
+<li>Deblurring (モーションブラー除去)</li>
+<li>J. Sun, W. Cao, Z. Xu, J. Ponce. <a href="http://arxiv.org/abs/1503.00593">Learning a Convolutional Neural Network for Non-uniform Motion Blur Removal</a>. arXiv:1503.00593, 2015.</li>
+<li>自動彩色</li>
+<li><a href="http://tinyclouds.org/colorize/">Automatic Colorization</a>.</li>
+<li>B. Hariharan, P. Arbeláez, R. Girshick, J. Malik. <a href="http://arxiv.org/abs/1411.5752">Hypercolumns for Object Segmentation and Fine-grained Localization</a>. arXiv: 1411.5752, 2014.</li>
+</ul>
+<h3 id="3d">3Dタスクへ</h3>
+<ul>
+<li>Deep Stereo</li>
+<li>J. Flynn, I. Neulander, J. Philbin, N. Snavely. <a href="http://arxiv.org/abs/1506.06825">DeepStereo: Learning to Predict New Views from the World's Imagery</a>. arXiv:1506.06825, 2015.</li>
+<li><a href="https://www.youtube.com/watch?v=cizgVZ8rjKA">DeepStereo: Learning to Predict New Views from the World’s Imagery - YouTube</a>.</li>
+<li>ステレオマッチング</li>
+<li>J. Žbontar, Y. LeCun. <a href="http://arxiv.org/abs/1510.05970">Stereo Matching by Training a Convolutional Neural Network to Compare Image Patches</a>. arXiv: 1510.05970, 2015.</li>
+<li>単一画像による3Dタスク</li>
+<li>D. Eigen, R. Fergus. <a href="http://arxiv.org/abs/1411.4734">Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture</a>. arXiv: 1411.4734, 2014.</li>
+</ul>
+<h3 id="_8">映像への挑戦</h3>
+<ul>
+<li>スポーツ映像分類</li>
+<li>A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, F. Li. Large-scale Video Classification with Convolutional Neural Networks. CVPR, 2014.</li>
+</ul>
+<h3 id="_9">より “人間らしい” 機械知覚へ</h3>
+<ul>
+<li>MemNet: CNN for Memorability</li>
+<li><a href="http://memorability.csail.mit.edu/index.html">LaMem</a></li>
+<li>A. Khosla, A. S. Raju, A. Torralba and A. Oliva. Understanding and Predicting Image Memorability at a Large Scale. ICCV, 2015.</li>
+</ul>
+<h3 id="_10">マルチモーダル・アプリケーション</h3>
+<ul>
+<li>キャプション生成</li>
+<li>O. Vinyals, A. Toshev, S. Bengio, D. Erhan. Show and Tell: A Neural Image Caption Generator. arXiv: 1411.4555, 2014.</li>
+<li>J. Donahue, L. A. Hendricks, S. Guadarrama, M. Rohrbach, S. Venugopalan, K. Saenko, T. Darrell. <a href="http://arxiv.org/abs/1411.4389">Long-term Recurrent Convolutional Networks for Visual Recognition and Description</a>. arXiv: 1411.4389, 2014.</li>
+<li>画像に関する質問文に答える</li>
+<li>H. Gao, J. Mao, J. Zhou, Z. Huang, L. Wang, W. Xu. <a href="http://arxiv.org/abs/1505.05612">Are You Talking to a Machine? Dataset and Methods for Multilingual Image Question Answering</a>. arXiv: 1505.05612, 2015.</li>
+<li>M. Malinowski, M. Rohrbach, M. Fritz. Ask Your Neurons: A Neural-Based Approach to Answering Questions About Images. ICCV, 2015.</li>
+<li>マルチモーダルな情報表現</li>
+<li>R. Kiros, R. Salakhutdinov, R. S. Zemel. <a href="http://arxiv.org/abs/1411.2539">Unifying Visual-Semantic Embeddings with Multimodal Neural Language Models</a>. arXiv: 1411.2539, 2014.</li>
+</ul>
+<h3 id="cnn_2">CNNと強化学習</h3>
+<ul>
+<li>Playing Atari</li>
+<li>V. Mnih, K. Kavukcuoglu, D. Silver, A. Graves, I. Antonoglou, D. Wierstra, M. Riedmiller. <a href="http://arxiv.org/abs/1312.5602">Playing Atari with Deep Reinforcement Learning</a>. arXiv:1312.5602, 2013.</li>
+<li>V. Mnih, at al. Human-level control through deep reinforcement learning. nature, 2015.</li>
+<li>AlphaGo</li>
+<li>D. Silver, et al. Mastering the game of Go with deep neural networks and tree search. nature, 2016.</li>
+<li>Facebookによる囲碁AI</li>
+<li>Y. Tian, Y. Zhu. <a href="http://arxiv.org/abs/1511.06410">Better Computer Go Player with Neural Network and Long-term Prediction</a>. arXiv: 1511.06410, 2015.</li>
+<li>一人称3Dゲーム</li>
+<li>V. Mnih, A.P. Badia, M. Mirza, A. Graves, T. P. Lillicrap, T. Harley, D. Silver, K. Kavukcuoglu.  <a href="http://arxiv.org/abs/1602.01783">Asynchronous Methods for Deep Reinforcement Learning</a>. arXiv:1602.01783, 2016.</li>
+</ul>
+<h3 id="whats-next">What’s Next ?</h3>
+<ul>
+<li>Visual Genome</li>
+<li><a href="https://visualgenome.org/">Visual Genome</a></li>
+</ul>
+
+        </article>
+
+            <div class="comments">
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    var disqus_identifier = "wbaflcnn.html";
+                    (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//futonnote.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+            </div>
+    </div>
+    <div class="col-md-3 content-right">
+        <div class='anchorific'></div>
+    </div>
+</div>
+                </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            <p><a href="http://github.com/samael500/w3-personal-blog/">W3 Personal Blog</a> is a flat <a href="http://getbootstrap.com/">bootstrap</a> responsive theme designed by <a href="https://w3layouts.com/personal-blog-a-blogging-category-flat-bootstrap-responsive-web-template/">W3layouts</a> ported to a pelican by <a href="http://samael500.github.io/">Samael500</a>.<p>
+            <p>Copyrights © 2015 Futon note All rights reserved.</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-59884019-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'futonnote';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
