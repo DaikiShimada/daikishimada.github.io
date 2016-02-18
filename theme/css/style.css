@@ -520,7 +520,7 @@ text-align:justify;
 font-size: 1em;
 line-height: 1.8em;
 padding-left: 2.5em;
-text-align:justify;
+/* text-align:justify; */
 }
 .single-grid img{
 max-width:100%;
