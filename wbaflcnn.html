@@ -148,166 +148,267 @@
 （学生は4人くらい…？しかもほぼ身内）</p>
 <p>僕のスライドはSlide Shareの方にアップロードされています．<br />
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/NIXhrnmgjyU0xK" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/sheemap/convolutional-neural-networks-wbafl2" title="Convolutional Neural Networks のトレンド @WBAFLカジュアルトーク#2" target="_blank">Convolutional Neural Networks のトレンド @WBAFLカジュアルトーク#2</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/sheemap">Daiki Shimada</a></strong> </div></p>
-<p>しかも，映像もアップロードされていた…
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cBog5o9ebcQ" frameborder="0" allowfullscreen></iframe></p>
+<p>しかも，映像もアップロードされていた…  </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cBog5o9ebcQ" frameborder="0" allowfullscreen></iframe>
+
 <h2 id="_2">発表後記</h2>
 <p>実際はConvolutional Neural Networks(CNN)系論文128本ノックにするつもりだったとはいえない空気でしたね…</p>
-<p>個人的には画像生成やキャプション生成系の研究速度はとても速く進んでいると感じています．<br />
-Visual Turing Test の話はもう少し掘り下げたかったですね．  </p>
+<p>個人的には画像生成やキャプション生成系の研究速度はとても速く進んでいると感じています．  <br />
+Visual Turing Test の話はもう少し掘り下げたかったですね．    </p>
 <p>Deep Mind が DQNで３D一人称視点ゲームを遊ぶ話がちょうど発表直前に出ていて，alphaGoの話題とともに紹介しましたが，あの領域は完全にGoogleの独壇場かなと思います．</p>
-<p>本当にここ最近はすごいペースで研究が進んでいくので，どこかで一回整理しないといけないなっていう危機感があり，自分なりにまとめました．<br />
-サーベイってけっこう上手くやらないと労力使うし，大事な研究を見落とすこともあるので，こういう資料がだれかのサーベイの種なればいいなあ，なんて．<br />
+<p>本当にここ最近はすごいペースで研究が進んでいくので，どこかで一回整理しないといけないなっていう危機感があり，自分なりにまとめました．  <br />
+サーベイってけっこう上手くやらないと労力使うし，大事な研究を見落とすこともあるので，こういう資料がだれかのサーベイの種なればいいなあ，なんて．  <br />
 （各々，独自にまとめていって，こういう資料がどんどん増えることを願う）</p>
 <h2 id="_3">紹介文献一覧</h2>
 <h3 id="cnn">CNNアーキテクチャの変遷 / 最適化手法</h3>
 <h4 id="cnn_1">CNNアーキテクチャ</h4>
 <ul>
-<li>Neocognitron</li>
+<li>Neocognitron<ul>
 <li>K. Fukushima. Neocognitron: A self-organizing neural network model for a mechanism of pattern recognition unaffected by shift in position. Biological Cybernetics 36, 1980.</li>
-<li>LeNet</li>
+</ul>
+</li>
+<li>LeNet<ul>
 <li>Y LeCun, L Bottou, Y Bengio, P Haffner. Gradient-based learning applied to document recognition. Proceedings of the IEEE 86, 1998.</li>
-<li>Ave./Max Pooling, Local Contrast Normalization</li>
+</ul>
+</li>
+<li>Ave./Max Pooling, Local Contrast Normalization<ul>
 <li>K. Jarrett, K. Kavukcuoglu, M. Ranzato, Y. LeCun. What is the best multi-stage architecture for object recognition?. CVPR, 2009.</li>
-<li>ReLU</li>
+</ul>
+</li>
+<li>ReLU<ul>
 <li>X. Glorot, A. Bordes, Y. Bengio. Deep Sparse Rectifier Neural Networks. AISTATS 11, 2011.</li>
-<li>Dropout</li>
+</ul>
+</li>
+<li>Dropout<ul>
 <li>G. E. Hinton, N. Srivastava, A. Krizhevsky, I. Sutskever, R. R. Salakhutdinov. <a href="http://arxiv.org/abs/1207.0580">Improving neural networks by preventing co-adaptation of feature detectors</a>. arXiv: 1207.0580, 2012.</li>
-<li>AlexNet</li>
+</ul>
+</li>
+<li>AlexNet<ul>
 <li>A. Krizhevsky, I. Sutskever, G. E. Hinton. ImageNet Classification with Deep Convolutional Neural Networks. NIPS, 2012.</li>
-<li>Network in Network, global ave. pooling</li>
+</ul>
+</li>
+<li>Network in Network, global ave. pooling<ul>
 <li>M. Lin, Q. Chen, S. Yan. <a href="http://arxiv.org/abs/1312.4400">Network In Network</a>. arXiv: 1312.4400, 2013.</li>
-<li>VGG-Net</li>
+</ul>
+</li>
+<li>VGG-Net<ul>
 <li>K. Simonyan, A. Zisserman. <a href="http://arxiv.org/abs/1409.1556">Very Deep Convolutional Networks for Large-Scale Visual Recognition</a>. arXiv: 1409.1556, 2014.</li>
-<li>GoogLeNet / Inception</li>
+</ul>
+</li>
+<li>GoogLeNet / Inception<ul>
 <li>C. Szegedy, W. Liu, Y. Jia, P. Sermanet, S. Reed, D. Anguelov, D. Erhan, V. Vanhoucke, A. Rabinovich. <a href="http://arxiv.org/abs/1409.4842">Going deeper with convolutions</a>. arXiv: 1409.4842, 2014.</li>
 <li>C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, Z. Wojna. <a href="http://arxiv.org/abs/1512.00567">Rethinking the Inception Architecture for Computer Vision</a>. arXiv: 1512.00567, 2015.</li>
-<li>SPP-Net</li>
+</ul>
+</li>
+<li>SPP-Net<ul>
 <li>K. He, X. Zhang, S. Ren, J. Sun. <a href="http://arxiv.org/abs/1406.4729">Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition</a>. arXiv: 1406.4729, 2014.</li>
-<li>All Convolutional Net, guided BackPropagation</li>
+</ul>
+</li>
+<li>All Convolutional Net, guided BackPropagation<ul>
 <li>J. T. Springenberg, A. Dosovitskiy, T. Brox, M. Riedmiller. <a href="http://arxiv.org/abs/1412.6806">Striving for Simplicity: The All Convolutional Net</a>. arXiv: 1412.6806, 2014.</li>
-<li>Exemplar CNN</li>
+</ul>
+</li>
+<li>Exemplar CNN<ul>
 <li>A. Dosovitskiy, P. Fischer, J. T. Springenberg, M. Riedmiller, T. Brox. <a href="http://arxiv.org/abs/1406.6909">Discriminative Unsupervised Feature Learning with Exemplar Convolutional Neural Networks</a>. arXiv: 1406.6909, 2014.</li>
-<li>Triplet network</li>
+</ul>
+</li>
+<li>Triplet network<ul>
 <li>E. Hoffer, N. Ailon. <a href="http://arxiv.org/abs/1412.6622">Deep metric learning using Triplet network</a>. arXiv: 1412.6622, 2014.</li>
-<li>Batch Normalization</li>
+</ul>
+</li>
+<li>Batch Normalization<ul>
 <li>S. Ioffe, C. Szegedy. <a href="http://arxiv.org/abs/1502.03167">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>. arXiv: 1502.03167, 2015.</li>
-<li>Residual Network; ResNet</li>
+</ul>
+</li>
+<li>Residual Network; ResNet<ul>
 <li>K. He, X. Zhang, S. Ren, J. Sun. <a href="http://arxiv.org/abs/1512.03385">Deep Residual Learning for Image Recognition</a>. arXiv: 1512.03385, 2015.</li>
+</ul>
+</li>
 </ul>
 <h4 id="_4">確率的勾配降下法における学習率調整法</h4>
 <ul>
-<li>AdaGrad</li>
+<li>AdaGrad<ul>
 <li>J. Duchi, E. Hazan, Y. Singer. <a href="http://stanford.edu/~jduchi/projects/DuchiHaSi10_colt.pdf">Adaptive Subgradient Methods for Online Learning and Stochastic Optimization</a>. Journal of Machine Learning Research 12 ,2011.</li>
-<li>RMSProp</li>
+</ul>
+</li>
+<li>RMSProp<ul>
 <li>T. Tieleman, G. Hinton. Divide the gradient by a running average of its recent magnitude. <a href="https://www.coursera.org/course/neuralnets">COURSERA: Neural Networks for Machine Learning 4</a>, 2012.</li>
-<li>AdaDelta</li>
+</ul>
+</li>
+<li>AdaDelta<ul>
 <li>M. D. Zeiler. <a href="http://arxiv.org/abs/1212.5701">ADADELTA: An Adaptive Learning Rate Method</a>. arXiv: 1212.5701, 2012.</li>
-<li>Adam</li>
+</ul>
+</li>
+<li>Adam<ul>
 <li>D. Kingma, J. Ba. <a href="http://arxiv.org/abs/1412.6980">Adam: A Method for Stochastic Optimization</a>. arXiv: 1412.6980, 2014.</li>
+</ul>
+</li>
 </ul>
 <h3 id="_5">特徴量の解析 / 可視化</h3>
 <ul>
-<li>DeconvNet for visualizing</li>
+<li>DeconvNet for visualizing<ul>
 <li>M.D. Zeiler, and R. Fergus. <a href="http://arxiv.org/abs/1311.2901">Visualizing and understanding convolutional networks</a>. arXiv,: 1311.2901, 2013.</li>
-<li>入力画像の最適化</li>
+</ul>
+</li>
+<li>入力画像の最適化<ul>
 <li>A. Mahendran, A. Vedaldi. <a href="http://arxiv.org/abs/1412.0035">Understanding Deep Image Representations by Inverting Them</a>. arXiv: 1412.0035, 2014.</li>
-<li>CNNをだます</li>
+</ul>
+</li>
+<li>CNNをだます<ul>
 <li>C. Szegedy, W. Zaremba, I. Sutskever, J. Bruna, D. Erhan, I. J. Goodfellow, R. Fergus. <a href="http://arxiv.org/abs/1312.6199">Intriguing properties of neural networks</a>. arXiv: 1312.6199, 2013.</li>
 <li>I. J. Goodfellow, J. Shlens, C. Szegedy. <a href="http://arxiv.org/abs/1412.6572">Explaining and Harnessing Adversarial Examples</a>. arXiv: 1412.6572, 2014.</li>
 <li>A. Nguyen, J. Yosinski, J. Clune. <a href="http://arxiv.org/abs/1412.1897">Deep Neural Networks are Easily Fooled: High Confidence Predictions for Unrecognizable Images</a>. arXiv: 1412.1897, 2014.</li>
 </ul>
+</li>
+</ul>
 <h3 id="_6">物体検出・領域分割</h3>
 <ul>
-<li>R-CNN</li>
+<li>R-CNN<ul>
 <li>R. Girshick, J. Donahue, T. Darrell, J. Malik. <a href="http://arxiv.org/abs/1311.2524">Rich feature hierarchies for accurate object detection and semantic segmentation</a>. arXiv:1311.2524, 2013.</li>
-<li>Fast R-CNN</li>
+</ul>
+</li>
+<li>Fast R-CNN<ul>
 <li>R. Girshick. <a href="http://arxiv.org/abs/1504.08083">Fast R-CNN</a>. arXiv:1504.08083, 2015.</li>
-<li>Faster R-CNN</li>
+</ul>
+</li>
+<li>Faster R-CNN<ul>
 <li>S. Ren, K. He, R. Girshick, J. Sun. <a href="http://arxiv.org/abs/1506.01497">Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks</a>. arXiv:1506.01497, 2015.</li>
-<li>Fully Convolutional Networks (FCN)</li>
+</ul>
+</li>
+<li>Fully Convolutional Networks (FCN)<ul>
 <li>K. Simonyan, A. Vedaldi, A. Zisserman. <a href="http://arxiv.org/abs/1312.6034">Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps</a>. arXiv: 1312.6034, 2013.</li>
-<li>SegNet</li>
+</ul>
+</li>
+<li>SegNet<ul>
 <li>V. Badrinarayanan, A. Handa, R. Cipolla. <a href="http://arxiv.org/abs/1505.07293">SegNet: A Deep Convolutional Encoder-Decoder Architecture for Robust Semantic Pixel-Wise Labelling</a>. arXiv: 1505.07293, 2015.</li>
-<li>CNN + 条件付き確率場(CRF)</li>
+</ul>
+</li>
+<li>CNN + 条件付き確率場(CRF)<ul>
 <li>] S. Zheng, S. Jayasumana, B. R. Paredes, V. Vineet, Z. Su, D. Du, C. Huang, P. H. S. Torr. <a href="http://arxiv.org/abs/1502.03240">Conditional Random Fields as Recurrent Neural Networks</a>. arXiv: 1502.03240, 2015.</li>
-<li>Deep Mask</li>
+</ul>
+</li>
+<li>Deep Mask<ul>
 <li>P. O. Pinheiro, R. Collobert, P. Dollar. <a href="http://arxiv.org/abs/1506.06204">Learning to Segment Object Candidates</a>. arXiv: 1506.06204, 2015.</li>
-<li>Deep Face</li>
+</ul>
+</li>
+<li>Deep Face<ul>
 <li>Y. Taigman, M. Yang, M. A. Ranzato and L. Wolf. DeepFace: Closing the Gap to Human-Level Performance in Face Verification. CVPR, 2014.</li>
-<li>Spatial Transformer Networks</li>
+</ul>
+</li>
+<li>Spatial Transformer Networks<ul>
 <li>M. Jaderberg, K. Simonyan, A. Zisserman, K. Kavukcuoglu. <a href="http://arxiv.org/abs/1506.02025">Spatial Transformer Networks</a>. arXiv: 1506.02025, 2015.</li>
+</ul>
+</li>
 </ul>
 <h3 id="_7">画像生成・超解像</h3>
 <ul>
-<li>Deep Dream</li>
+<li>Deep Dream<ul>
 <li><a href="http://googleresearch.blogspot.jp/2015/06/inceptionism-going-deeper-into-neural.html">Inceptionism: Going Deeper into Neural Networks</a>. </li>
 <li>K. Simonyan, A. Vedaldi, A. Zisserman. <a href="http://arxiv.org/abs/1312.6034">Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps</a>. arXiv: 1312.6034, 2013.</li>
-<li>モーフィング</li>
-<li>A. Dosovitskiy, J. T. Springenberg, M. Tatarchenko, T. Brox. <a href="http://arxiv.org/abs/1411.5928">Learning to Generate Chairs, Tables and Cars with Convolutional Networks</a>. arXiv: 1411.5928, 2014.</li>
-<li>画風変換</li>
-<li>L. A. Gatys, A. S. Ecker, M. Bethge. <a href="http://arxiv.org/abs/1508.06576">A Neural Algorithm of Artistic Style</a>. arXiv: 1508.06576, 2015.</li>
-<li>C. Li, M. Wand. <a href="http://arxiv.org/abs/1601.04589">Combining Markov Random Fields and Convolutional Neural Networks for Image Synthesis</a>. arXiv:1601.04589, 2016.</li>
-<li>画像生成とベクトル演算性</li>
-<li>A. Radford, L. Metz, S. Chintala. <a href="http://arxiv.org/abs/1511.06434">Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</a>. arXiv:1511.06434, 2015.</li>
-<li>超解像</li>
-<li>C. Dong, C. C. Loy, K. He, X. Tang. <a href="http://arxiv.org/abs/1501.00092">Image Super-Resolution Using Deep Convolutional Networks</a>. arXiv:1501.00092, 2015.</li>
-<li><a href="http://waifu2x.udp.jp/index.ja.html">waifu2x</a>.</li>
-<li>Deblurring (モーションブラー除去)</li>
-<li>J. Sun, W. Cao, Z. Xu, J. Ponce. <a href="http://arxiv.org/abs/1503.00593">Learning a Convolutional Neural Network for Non-uniform Motion Blur Removal</a>. arXiv:1503.00593, 2015.</li>
-<li>自動彩色<ul>
-<li><a href="http://tinyclouds.org/colorize/">Automatic Colorization</a>.</li>
 </ul>
 </li>
+<li>モーフィング<ul>
+<li>A. Dosovitskiy, J. T. Springenberg, M. Tatarchenko, T. Brox. <a href="http://arxiv.org/abs/1411.5928">Learning to Generate Chairs, Tables and Cars with Convolutional Networks</a>. arXiv: 1411.5928, 2014.</li>
+</ul>
+</li>
+<li>画風変換<ul>
+<li>L. A. Gatys, A. S. Ecker, M. Bethge. <a href="http://arxiv.org/abs/1508.06576">A Neural Algorithm of Artistic Style</a>. arXiv: 1508.06576, 2015.</li>
+<li>C. Li, M. Wand. <a href="http://arxiv.org/abs/1601.04589">Combining Markov Random Fields and Convolutional Neural Networks for Image Synthesis</a>. arXiv:1601.04589, 2016.</li>
+</ul>
+</li>
+<li>画像生成とベクトル演算性<ul>
+<li>A. Radford, L. Metz, S. Chintala. <a href="http://arxiv.org/abs/1511.06434">Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</a>. arXiv:1511.06434, 2015.</li>
+</ul>
+</li>
+<li>超解像<ul>
+<li>C. Dong, C. C. Loy, K. He, X. Tang. <a href="http://arxiv.org/abs/1501.00092">Image Super-Resolution Using Deep Convolutional Networks</a>. arXiv:1501.00092, 2015.</li>
+<li><a href="http://waifu2x.udp.jp/index.ja.html">waifu2x</a>.</li>
+</ul>
+</li>
+<li>Deblurring (モーションブラー除去)<ul>
+<li>J. Sun, W. Cao, Z. Xu, J. Ponce. <a href="http://arxiv.org/abs/1503.00593">Learning a Convolutional Neural Network for Non-uniform Motion Blur Removal</a>. arXiv:1503.00593, 2015.</li>
+</ul>
+</li>
+<li>自動彩色<ul>
+<li><a href="http://tinyclouds.org/colorize/">Automatic Colorization</a>.</li>
 <li>B. Hariharan, P. Arbeláez, R. Girshick, J. Malik. <a href="http://arxiv.org/abs/1411.5752">Hypercolumns for Object Segmentation and Fine-grained Localization</a>. arXiv: 1411.5752, 2014.</li>
+</ul>
+</li>
 </ul>
 <h3 id="3d">3Dタスクへ</h3>
 <ul>
-<li>Deep Stereo</li>
+<li>Deep Stereo<ul>
 <li>J. Flynn, I. Neulander, J. Philbin, N. Snavely. <a href="http://arxiv.org/abs/1506.06825">DeepStereo: Learning to Predict New Views from the World's Imagery</a>. arXiv:1506.06825, 2015.</li>
 <li><a href="https://www.youtube.com/watch?v=cizgVZ8rjKA">DeepStereo: Learning to Predict New Views from the World’s Imagery - YouTube</a>.</li>
-<li>ステレオマッチング</li>
+</ul>
+</li>
+<li>ステレオマッチング<ul>
 <li>J. Žbontar, Y. LeCun. <a href="http://arxiv.org/abs/1510.05970">Stereo Matching by Training a Convolutional Neural Network to Compare Image Patches</a>. arXiv: 1510.05970, 2015.</li>
-<li>単一画像による3Dタスク</li>
+</ul>
+</li>
+<li>単一画像による3Dタスク<ul>
 <li>D. Eigen, R. Fergus. <a href="http://arxiv.org/abs/1411.4734">Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture</a>. arXiv: 1411.4734, 2014.</li>
+</ul>
+</li>
 </ul>
 <h3 id="_8">映像への挑戦</h3>
 <ul>
-<li>スポーツ映像分類</li>
+<li>スポーツ映像分類<ul>
 <li>A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, F. Li. Large-scale Video Classification with Convolutional Neural Networks. CVPR, 2014.</li>
+</ul>
+</li>
 </ul>
 <h3 id="_9">より “人間らしい” 機械知覚へ</h3>
 <ul>
-<li>MemNet: CNN for Memorability</li>
+<li>MemNet: CNN for Memorability<ul>
 <li><a href="http://memorability.csail.mit.edu/index.html">LaMem</a></li>
 <li>A. Khosla, A. S. Raju, A. Torralba and A. Oliva. Understanding and Predicting Image Memorability at a Large Scale. ICCV, 2015.</li>
 </ul>
+</li>
+</ul>
 <h3 id="_10">マルチモーダル・アプリケーション</h3>
 <ul>
-<li>キャプション生成</li>
+<li>キャプション生成<ul>
 <li>O. Vinyals, A. Toshev, S. Bengio, D. Erhan. Show and Tell: A Neural Image Caption Generator. arXiv: 1411.4555, 2014.</li>
 <li>J. Donahue, L. A. Hendricks, S. Guadarrama, M. Rohrbach, S. Venugopalan, K. Saenko, T. Darrell. <a href="http://arxiv.org/abs/1411.4389">Long-term Recurrent Convolutional Networks for Visual Recognition and Description</a>. arXiv: 1411.4389, 2014.</li>
-<li>画像に関する質問文に答える</li>
+</ul>
+</li>
+<li>画像に関する質問文に答える<ul>
 <li>H. Gao, J. Mao, J. Zhou, Z. Huang, L. Wang, W. Xu. <a href="http://arxiv.org/abs/1505.05612">Are You Talking to a Machine? Dataset and Methods for Multilingual Image Question Answering</a>. arXiv: 1505.05612, 2015.</li>
 <li>M. Malinowski, M. Rohrbach, M. Fritz. Ask Your Neurons: A Neural-Based Approach to Answering Questions About Images. ICCV, 2015.</li>
-<li>マルチモーダルな情報表現</li>
+</ul>
+</li>
+<li>マルチモーダルな情報表現<ul>
 <li>R. Kiros, R. Salakhutdinov, R. S. Zemel. <a href="http://arxiv.org/abs/1411.2539">Unifying Visual-Semantic Embeddings with Multimodal Neural Language Models</a>. arXiv: 1411.2539, 2014.</li>
+</ul>
+</li>
 </ul>
 <h3 id="cnn_2">CNNと強化学習</h3>
 <ul>
-<li>Playing Atari</li>
+<li>Playing Atari<ul>
 <li>V. Mnih, K. Kavukcuoglu, D. Silver, A. Graves, I. Antonoglou, D. Wierstra, M. Riedmiller. <a href="http://arxiv.org/abs/1312.5602">Playing Atari with Deep Reinforcement Learning</a>. arXiv:1312.5602, 2013.</li>
 <li>V. Mnih, at al. Human-level control through deep reinforcement learning. nature, 2015.</li>
-<li>AlphaGo</li>
+</ul>
+</li>
+<li>AlphaGo<ul>
 <li>D. Silver, et al. Mastering the game of Go with deep neural networks and tree search. nature, 2016.</li>
-<li>Facebookによる囲碁AI</li>
+</ul>
+</li>
+<li>Facebookによる囲碁AI<ul>
 <li>Y. Tian, Y. Zhu. <a href="http://arxiv.org/abs/1511.06410">Better Computer Go Player with Neural Network and Long-term Prediction</a>. arXiv: 1511.06410, 2015.</li>
-<li>一人称3Dゲーム</li>
-<li>V. Mnih, A.P. Badia, M. Mirza, A. Graves, T. P. Lillicrap, T. Harley, D. Silver, K. Kavukcuoglu.  <a href="http://arxiv.org/abs/1602.01783">Asynchronous Methods for Deep Reinforcement Learning</a>. arXiv:1602.01783, 2016.</li>
+</ul>
+</li>
+<li>一人称3Dゲーム<ul>
+<li>V. Mnih, A.P. Badia, M. Mirza, A. Graves, T. P. Lillicrap, T. Harley, D. Silver, K. Kavukcuoglu. <a href="http://arxiv.org/abs/1602.01783">Asynchronous Methods for Deep Reinforcement Learning</a>. arXiv:1602.01783, 2016.</li>
+</ul>
+</li>
 </ul>
 <h3 id="whats-next">What’s Next ?</h3>
 <ul>
-<li>Visual Genome</li>
+<li>Visual Genome<ul>
 <li><a href="https://visualgenome.org/">Visual Genome</a></li>
+</ul>
+</li>
 </ul>
 
         </article>
