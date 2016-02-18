@@ -113,8 +113,10 @@ Visual Turing Test の話はもう少し掘り下げたかったですね．  &l
 &lt;li&gt;&lt;a href="http://waifu2x.udp.jp/index.ja.html"&gt;waifu2x&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Deblurring (モーションブラー除去)&lt;/li&gt;
 &lt;li&gt;J. Sun, W. Cao, Z. Xu, J. Ponce. &lt;a href="http://arxiv.org/abs/1503.00593"&gt;Learning a Convolutional Neural Network for Non-uniform Motion Blur Removal&lt;/a&gt;. arXiv:1503.00593, 2015.&lt;/li&gt;
-&lt;li&gt;自動彩色&lt;/li&gt;
+&lt;li&gt;自動彩色&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://tinyclouds.org/colorize/"&gt;Automatic Colorization&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;B. Hariharan, P. Arbeláez, R. Girshick, J. Malik. &lt;a href="http://arxiv.org/abs/1411.5752"&gt;Hypercolumns for Object Segmentation and Fine-grained Localization&lt;/a&gt;. arXiv: 1411.5752, 2014.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="3d"&gt;3Dタスクへ&lt;/h3&gt;
