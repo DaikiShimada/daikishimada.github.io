@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/programming.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-01-05T00:50:00+09:00</updated><entry><title>Pelican + Github Pages でブログを作った話</title><link href="http://daikishimada.github.io/pelican-start.html" rel="alternate"></link><updated>2016-01-05T00:50:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-01-05:pelican-start.html</id><summary type="html">&lt;p&gt;Pelicanでこのサイトを作った時のメモ．&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/programming.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-02-19T21:30:00+09:00</updated><entry><title>vimでPythonのコードを書いてると落ちるので対処する</title><link href="http://daikishimada.github.io/vim_python_crash.html" rel="alternate"></link><updated>2016-02-19T21:30:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-19:vim_python_crash.html</id><summary type="html">&lt;p&gt;vimでPython書いてると落ちるようになってしまったので，対処した話．&lt;br /&gt;
+neocompleteがトリガで．オムニ補完が原因で死んでたらしい．&lt;/p&gt;
+&lt;h2 id="vim"&gt;vimが死ぬ&lt;/h2&gt;
+&lt;p&gt;Pythonのコードを書いていると，いきなりvimが閉じて，&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Vim&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Caught&lt;/span&gt; &lt;span class="n"&gt;deadly&lt;/span&gt; &lt;span class="n"&gt;signal&lt;/span&gt; &lt;span class="n"&gt;TRAP&lt;/span&gt;
+&lt;span class="n"&gt;Vim&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;preserving&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;
+&lt;span class="n"&gt;Vim&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Finished&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Trace&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;breakpoint&lt;/span&gt; &lt;span class="n"&gt;trap&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt; &lt;span class="n"&gt;dumped&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;となって，クラッシュしてしまう．&lt;/p&gt;
+&lt;p&gt;タイミング的には，"."を打ち込んだ時だったので，補完で使っているプラグインneocompleteか？&lt;br /&gt;
+と思っていた．&lt;/p&gt;
+&lt;h2 id="neocomplete"&gt;neocompleteは悪く無い&lt;/h2&gt;
+&lt;p&gt;調べてみると，&lt;a href="http://d.hatena.ne.jp/akahana_1/20140617/p2"&gt;neocomplcacheを使っている人で同様の症状がでている人&lt;/a&gt;がいるようだった．&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;neocomplcacheのオムニ補完がこけていたのだという事が判明したので、特定の言語についてオムニ補完を無効にしてみます。
+neocomplcacheのドキュメントに書いてあるとおりにオムニ補完を無効。&lt;br /&gt;
+&lt;a href="http://d.hatena.ne.jp/akahana_1/20140617/p2"&gt;もしもneocomplcacheでコケてしまった時の解決法 - SEGVな毎日&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;なるほどと思ってneocompleteのドキュメントを読んでみると，&lt;a href="https://github.com/Shougo/neocomplete.vim/blob/master/doc/neocomplete.txt#L1450"&gt;ちゃんと対処法が書いてあった&lt;/a&gt;．&lt;/p&gt;
+&lt;p&gt;公式のドキュメントにもあるが，これはオムニ補完のところで死んでいるようなので，&lt;br /&gt;
+neocompleteには責任はない．&lt;/p&gt;
+&lt;p&gt;Pythonで症状がでていたが，どうやらRubyでも症状が出るようだ．&lt;/p&gt;
+&lt;h2 id="_1"&gt;解決策&lt;/h2&gt;
+&lt;p&gt;と，いうことで.vimrcにPythonのオムニ補完の無効化を記述する．&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&amp;quot; Disable omnifunc in Python
+if !exists(&amp;#39;g:neocomplete#sources#omni#input_patterns&amp;#39;)
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.python = &amp;#39;&amp;#39;  
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="vim"></category><category term="python"></category></entry><entry><title>Pelican + Github Pages でブログを作った話</title><link href="http://daikishimada.github.io/pelican-start.html" rel="alternate"></link><updated>2016-01-05T00:50:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-01-05:pelican-start.html</id><summary type="html">&lt;p&gt;Pelicanでこのサイトを作った時のメモ．&lt;/p&gt;
 &lt;h2 id="pelican"&gt;Pelicanとは？&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://github.com/getpelican/pelican/tree/3.4.0"&gt;getpelican/pelican at 3.4.0&lt;/a&gt;は，Pythonで作られた静的webサイトジェネレータです．&lt;/p&gt;
 &lt;p&gt;フランス語の"notebook"を意味する"calepin"から名付けられたらしい．&lt;br /&gt;
