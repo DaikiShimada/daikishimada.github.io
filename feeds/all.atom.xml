@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/all.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-02-19T21:30:00+09:00</updated><entry><title>vimでPythonのコードを書いてると落ちるので対処する</title><link href="http://daikishimada.github.io/vim_python_crash.html" rel="alternate"></link><updated>2016-02-19T21:30:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-19:vim_python_crash.html</id><summary type="html">&lt;p&gt;vimでPython書いてると落ちるようになってしまったので，対処した話．&lt;br /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/all.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-02-21T15:00:00+09:00</updated><entry><title>Pelicanでソーシャルボタンを導入する</title><link href="http://daikishimada.github.io/pelican-social.html" rel="alternate"></link><updated>2016-02-21T15:00:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-21:pelican-social.html</id><summary type="html">&lt;p&gt;Pelicanで作ってるブログの各記事ページにソーシャルボタンを導入するまで．
+テーマに付属しているソーシャルボタンははてブボタンがデフォルトで使えなくて，無理やり入れるとレイアウトが崩れるので，プラグインで簡単に入れてみた．&lt;/p&gt;
+&lt;p&gt;基本的に前提として，このブログをセットアップした時のテーマ・設定での導入記録です．&lt;/p&gt;
+&lt;h2 id="jquerysocialbutton"&gt;jQuery.socialbuttonプラグインの導入&lt;/h2&gt;
+&lt;p&gt;導入の手軽さから，
+&lt;a href="http://itra.jp/jquery_socialbutton_plugin/"&gt;Pinterest/Google+1/Twitter/facebookいいね/facebook Share/mixiチェック/mixiイイネ/GREEいいね/Evernote/はてブのボタンを超カンタンに作れる jQuery.socialbutton プラグインを作ったよ | アイトランス株式会社&lt;/a&gt;
+を使ってソーシャルボタンを入れることにしました．&lt;/p&gt;
+&lt;p&gt;ページから，min版（今回はver.1.9.1）をダウンロード．
+&lt;img alt="Download Page" src="https://www.evernote.com/l/AQD8K40X6eBIKaZpttfYBsnClyP6kx_K_eIB/image.png" title="ダウンロード" /&gt;&lt;/p&gt;
+&lt;p&gt;落としてきたjsファイルを，&lt;code&gt;w3-personal-blog-master/static/js/&lt;/code&gt;内へ．&lt;br /&gt;
+これでインストール自体は完了．&lt;/p&gt;
+&lt;h2 id="_1"&gt;ソーシャルボタンの設置&lt;/h2&gt;
+&lt;p&gt;プラグイン自体は導入出来たので，templatesのファイルをいじって実際にソーシャルボタンを設置します．&lt;/p&gt;
+&lt;p&gt;今回使っているテーマは，&lt;code&gt;w3-personal-blog-master/templates/share.html&lt;/code&gt;というソーシャルボタン用のhtmlファイルが用意されていたので，こちらを編集しました．&lt;/p&gt;
+&lt;p&gt;設置に関する記述は本当に簡単で，&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/theme/js/jquery.socialbutton-1.9.1.min.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;&amp;lt;ul&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sns-btn-list&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;li&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;hatena&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;li&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;tweet&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;li&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;facebook_like&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.tweet&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;socialbutton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;twitter&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;button&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;horizontal&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;});&lt;/span&gt;
+      &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.facebook_like&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;socialbutton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;facebook_like&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;button&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;button_count&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;});&lt;/span&gt;
+      &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.hatena&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;socialbutton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hatena&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;});&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;だけで済んでしまいます．&lt;/p&gt;
+&lt;p&gt;すでに，テーマの方で元々jQueryを読み込んでいるので，ここではjQueryを読んでいません．&lt;/p&gt;
+&lt;p&gt;とりあえず，facebookはいいねボタンだけにしてみた．&lt;br /&gt;
+気分が変わったらシェアボタンもつけようかな…&lt;/p&gt;</summary><category term="pelican"></category><category term="web"></category></entry><entry><title>vimでPythonのコードを書いてると落ちるので対処する</title><link href="http://daikishimada.github.io/vim_python_crash.html" rel="alternate"></link><updated>2016-02-19T21:30:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-19:vim_python_crash.html</id><summary type="html">&lt;p&gt;vimでPython書いてると落ちるようになってしまったので，対処した話．&lt;br /&gt;
 neocompleteがトリガで．オムニ補完が原因で死んでたらしい．&lt;/p&gt;
 &lt;h2 id="vim"&gt;vimが死ぬ&lt;/h2&gt;
 &lt;p&gt;Pythonのコードを書いていると，いきなりvimが閉じて，&lt;/p&gt;
