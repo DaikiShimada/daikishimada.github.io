@@ -204,7 +204,7 @@ Visual Turing Test の話はもう少し掘り下げたかったですね．    
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Fully Convolutional Networks (FCN)&lt;ul&gt;
-&lt;li&gt;K. Simonyan, A. Vedaldi, A. Zisserman. &lt;a href="http://arxiv.org/abs/1312.6034"&gt;Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps&lt;/a&gt;. arXiv: 1312.6034, 2013.&lt;/li&gt;
+&lt;li&gt;J. Long, E. Shelhamer, T. Darrell. &lt;a href="http://arxiv.org/abs/1411.4038"&gt;Fully Convolutional Networks for Semantic Segmentation&lt;/a&gt;. arXiv: 1411.4038, 2014.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;SegNet&lt;ul&gt;
