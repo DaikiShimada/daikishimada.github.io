@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/programming.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-02-21T15:00:00+09:00</updated><entry><title>Pelicanでソーシャルボタンを導入する</title><link href="http://daikishimada.github.io/pelican-social.html" rel="alternate"></link><updated>2016-02-21T15:00:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-21:pelican-social.html</id><summary type="html">&lt;p&gt;Pelicanで作ってるブログの各記事ページにソーシャルボタンを導入するまで．
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/programming.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-04-17T21:30:00+09:00</updated><entry><title>データ解析くらぶ#01に参加しました</title><link href="http://daikishimada.github.io/data_analysis_club_01.html" rel="alternate"></link><published>2016-04-17T21:30:00+09:00</published><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-04-17:data_analysis_club_01.html</id><summary type="html">&lt;p&gt;全脳アーキテクチャ若手の会が主催する&lt;a href="http://wbawakate.connpass.com/event/28894/"&gt;データ解析くらぶ#01&lt;/a&gt;に参加しました．&lt;br /&gt;
+全然攻略できなかったのですが，参加した感想と僕の手法の話をまとめておきます．&lt;/p&gt;
+&lt;h2 id="predicting-a-biological-response"&gt;Predicting a Biological Response&lt;/h2&gt;
+&lt;p&gt;今回のお題は，Kaggleの&lt;a href="https://www.kaggle.com/c/bioresponse"&gt;Predicting a Biological Response&lt;/a&gt;でした．&lt;br /&gt;
+当日にデータの中身を見ましたが，完全に数値化されたデータ（次元が1,000以上）に対して，生化学的活性（0/1）を分類する問題でした．&lt;/p&gt;
+&lt;p&gt;ひとまず，データの構造を確認するために，スタンダードだと思われる方法でデータを可視化してみました．&lt;br /&gt;
+っていうかそれしかやってない．&lt;/p&gt;
+&lt;h2 id="_1"&gt;データの可視化&lt;/h2&gt;
+&lt;p&gt;まずはPCAでデータをプロットしました．
+赤色の点が1と出力するべきデータ，青色の点が0と出力するべきデータ．&lt;/p&gt;
+&lt;p&gt;んんん…，クラスタみたいなものが見えるけど，線形なモデルだと厳しそう…&lt;/p&gt;
+&lt;p&gt;次は，t-SNEでデータをプロットしてみます．&lt;/p&gt;
+&lt;p&gt;この辺で，今回のデータはかなり難しいんじゃないかと気がつく．&lt;br /&gt;
+っていうか何か構造があるのかこれ．&lt;/p&gt;
+&lt;p&gt;次はAutoencoderを使って2次元に圧縮することで可視化を試みます．
+まずはいきなりぐしゃっと．&lt;/p&gt;
+&lt;h2 id="_2"&gt;とりあえず分類もやっとく&lt;/h2&gt;
+&lt;p&gt;実はこの可視化作業と並行して，多層ニューラルネットワークでの分類にチャレンジしてました．&lt;br /&gt;
+が，惨敗…．&lt;/p&gt;
+&lt;h2 id="_3"&gt;その他&lt;/h2&gt;
+&lt;p&gt;みなさん，PCAやt-SNEで次元を落としてからSVMやRandom Forest，XGBoostigのような機械学習手法を試してみたりしているようでした．&lt;br /&gt;
+データの入れ方を工夫しているようでしたが，生のまま学習器に入れたものが一番良かったなんていう報告もちらほら…  &lt;/p&gt;
+&lt;p&gt;一番良い性能を出していたのは，namakemonoさんによるStacked Generalizationを用いた手法でした．&lt;br /&gt;
+Stacked Generalizationはアンサンブル学習の手法で，様々なモデルの出力をさらに別の学習モデルに入れて学習させるという手法です．&lt;br /&gt;
+（&lt;a href="https://github.com/namakemono/kaggle-predicting-biological-response"&gt;GitHubでコードが公開されています&lt;/a&gt;）&lt;br /&gt;
+前に，画像認識系のコンペに出た時に知らず知らずのうちに使ってたのですが，ちゃんと名前が付いているのですね…．&lt;br /&gt;
+- &lt;a href="http://www.cs.utsa.edu/~bylander/cs6243/wolpert92stacked.pdf"&gt;【pdf注意】Stacked Generalization&lt;/a&gt;
+- &lt;a href="http://www.cs.waikato.ac.nz/~ihw/papers/97KMT-IHW-Stacked.pdf"&gt;【pdf注意】Stacked Generalization: when does it work?&lt;/a&gt;
+- &lt;a href="http://puyokw.hatenablog.com/entry/2015/12/12/090000"&gt;stacked generalization - puyokwの日記&lt;/a&gt;
+- &lt;a href="http://ibisforest.org/index.php?%E3%83%A1%E3%82%BF%E5%AD%A6%E7%BF%92"&gt;メタ学習 - 機械学習の「朱鷺の杜Wiki」&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="_4"&gt;感想&lt;/h2&gt;
+&lt;p&gt;可視化にばかり力を入れて，分類に時間を掛けられなかったことが残念ですが，&lt;br /&gt;
+普段画像処理ばかりやっている身としては新鮮（？）だったかなと．&lt;/p&gt;
+&lt;p&gt;こうやって時間を決めて何かに取り組むのは面白いですね．&lt;br /&gt;
+今回は，大学院生からポスドクの方，エンジニアの方までいろんなバックグラウンドの方が混ざってお話しながらできたので，勉強になりました．  &lt;/p&gt;</summary><category term="python"></category></entry><entry><title>Pelicanでソーシャルボタンを導入する</title><link href="http://daikishimada.github.io/pelican-social.html" rel="alternate"></link><published>2016-02-21T15:00:00+09:00</published><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-21:pelican-social.html</id><summary type="html">&lt;p&gt;Pelicanで作ってるブログの各記事ページにソーシャルボタンを導入するまで．
 テーマに付属しているソーシャルボタンははてブボタンがデフォルトで使えなくて，無理やり入れるとレイアウトが崩れるので，プラグインで簡単に入れてみた．&lt;/p&gt;
 &lt;p&gt;基本的に前提として，このブログをセットアップした時のテーマ・設定での導入記録です．&lt;/p&gt;
 &lt;h2 id="jquerysocialbutton"&gt;jQuery.socialbuttonプラグインの導入&lt;/h2&gt;
@@ -14,32 +48,32 @@
 &lt;p&gt;プラグイン自体は導入出来たので，templatesのファイルをいじって実際にソーシャルボタンを設置します．&lt;/p&gt;
 &lt;p&gt;今回使っているテーマは，&lt;code&gt;w3-personal-blog-master/templates/share.html&lt;/code&gt;というソーシャルボタン用のhtmlファイルが用意されていたので，こちらを編集しました．&lt;/p&gt;
 &lt;p&gt;設置に関する記述は本当に簡単で，&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/theme/js/jquery.socialbutton-1.9.1.min.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/theme/js/jquery.socialbutton-1.9.1.min.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 
-&lt;span class="nt"&gt;&amp;lt;ul&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sns-btn-list&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;li&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;hatena&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;li&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;tweet&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;li&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;facebook_like&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sns-btn-list&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;hatena&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;tweet&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;facebook_like&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 
-&lt;span class="nt"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
       &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.tweet&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;socialbutton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;twitter&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;button&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;horizontal&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;});&lt;/span&gt;
       &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.facebook_like&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;socialbutton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;facebook_like&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;button&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;button_count&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;});&lt;/span&gt;
       &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.hatena&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;socialbutton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hatena&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
   &lt;span class="p"&gt;});&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;だけで済んでしまいます．&lt;/p&gt;
 &lt;p&gt;すでに，テーマの方で元々jQueryを読み込んでいるので，ここではjQueryを読んでいません．&lt;/p&gt;
 &lt;p&gt;とりあえず，facebookはいいねボタンだけにしてみた．&lt;br /&gt;
-気分が変わったらシェアボタンもつけようかな…&lt;/p&gt;</summary><category term="pelican"></category><category term="web"></category></entry><entry><title>vimでPythonのコードを書いてると落ちるので対処する</title><link href="http://daikishimada.github.io/vim_python_crash.html" rel="alternate"></link><updated>2016-02-19T21:30:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-19:vim_python_crash.html</id><summary type="html">&lt;p&gt;vimでPython書いてると落ちるようになってしまったので，対処した話．&lt;br /&gt;
+気分が変わったらシェアボタンもつけようかな…&lt;/p&gt;</summary><category term="pelican"></category><category term="web"></category></entry><entry><title>vimでPythonのコードを書いてると落ちるので対処する</title><link href="http://daikishimada.github.io/vim_python_crash.html" rel="alternate"></link><published>2016-02-19T21:30:00+09:00</published><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-19:vim_python_crash.html</id><summary type="html">&lt;p&gt;vimでPython書いてると落ちるようになってしまったので，対処した話．&lt;br /&gt;
 neocompleteがトリガで．オムニ補完が原因で死んでたらしい．&lt;/p&gt;
 &lt;h2 id="vim"&gt;vimが死ぬ&lt;/h2&gt;
 &lt;p&gt;Pythonのコードを書いていると，いきなりvimが閉じて，&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Vim&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Caught&lt;/span&gt; &lt;span class="n"&gt;deadly&lt;/span&gt; &lt;span class="n"&gt;signal&lt;/span&gt; &lt;span class="n"&gt;TRAP&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Vim&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Caught&lt;/span&gt; &lt;span class="n"&gt;deadly&lt;/span&gt; &lt;span class="n"&gt;signal&lt;/span&gt; &lt;span class="n"&gt;TRAP&lt;/span&gt;
 &lt;span class="n"&gt;Vim&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;preserving&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;
 &lt;span class="n"&gt;Vim&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Finished&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
 &lt;span class="n"&gt;Trace&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;breakpoint&lt;/span&gt; &lt;span class="n"&gt;trap&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt; &lt;span class="n"&gt;dumped&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
@@ -62,12 +96,12 @@ neocompleteには責任はない．&lt;/p&gt;
 &lt;p&gt;Pythonで症状がでていたが，どうやらRubyでも症状が出るようだ．&lt;/p&gt;
 &lt;h2 id="_1"&gt;解決策&lt;/h2&gt;
 &lt;p&gt;と，いうことで.vimrcにPythonのオムニ補完の無効化を記述する．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&amp;quot; Disable omnifunc in Python
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot; Disable omnifunc in Python
 if !exists(&amp;#39;g:neocomplete#sources#omni#input_patterns&amp;#39;)
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
 let g:neocomplete#sources#omni#input_patterns.python = &amp;#39;&amp;#39;  
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="vim"></category><category term="python"></category></entry><entry><title>Pelican + Github Pages でブログを作った話</title><link href="http://daikishimada.github.io/pelican-start.html" rel="alternate"></link><updated>2016-01-05T00:50:00+09:00</updated><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-01-05:pelican-start.html</id><summary type="html">&lt;p&gt;Pelicanでこのサイトを作った時のメモ．&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="vim"></category><category term="python"></category></entry><entry><title>Pelican + Github Pages でブログを作った話</title><link href="http://daikishimada.github.io/pelican-start.html" rel="alternate"></link><published>2016-01-05T00:50:00+09:00</published><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-01-05:pelican-start.html</id><summary type="html">&lt;p&gt;Pelicanでこのサイトを作った時のメモ．&lt;/p&gt;
 &lt;h2 id="pelican"&gt;Pelicanとは？&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://github.com/getpelican/pelican/tree/3.4.0"&gt;getpelican/pelican at 3.4.0&lt;/a&gt;は，Pythonで作られた静的webサイトジェネレータです．&lt;/p&gt;
 &lt;p&gt;フランス語の"notebook"を意味する"calepin"から名付けられたらしい．&lt;br /&gt;
@@ -84,19 +118,19 @@ reStructuredText か Markdownでページ内容を記述できるのが魅力的
 &lt;/ul&gt;
 &lt;h2 id="pelican_1"&gt;Pelicanの導入&lt;/h2&gt;
 &lt;p&gt;pipを使えばあっという間．Markdownも入れておきます．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install pelican Markdown
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip install pelican Markdown
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;インタラクティブなコマンドツールで初期設定を済ましてくれます．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ./blog
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;blog
-&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-quickstart
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ mkdir ./blog
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; blog
+$ pelican-quickstart
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;以下のような形で質問に回答しました．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;Welcome to pelican-quickstart v3.6.3.
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Welcome to pelican-quickstart v3.6.3.
 
 This script will help you create a new Pelican-based website.
 
@@ -127,7 +161,7 @@ needed by Pelican.
 
 
 &lt;p&gt;ここで，&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&amp;gt; &amp;gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) y
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; &amp;gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) y
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -137,26 +171,26 @@ makeコマンドやfabコマンドでHTMLを生成出来るようになるので
 &lt;p&gt;ちなみに，ブログじゃないページは&lt;code&gt;content/pages/&lt;/code&gt;にファイルを置いていけば良いみたいです．&lt;/p&gt;
 &lt;h3 id="_1"&gt;記事の生成と確認&lt;/h3&gt;
 &lt;p&gt;Markdownからhtmlに書き出して欲しい時は，&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make html
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ make html
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;でhtmlを吐き出してくれます．初期設定では&lt;code&gt;output/&lt;/code&gt;以下に内容が出力されます．&lt;/p&gt;
 &lt;p&gt;htmlの確認をする時は，&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make serve
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ make serve
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;とすると，http://localhost:8000でwebサーバを走らせてくれるので，表示などをローカル環境で確認できます．&lt;/p&gt;
 &lt;p&gt;公開用にhtmlを吐き出したい時は，&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make publish
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ make publish
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;でやってくれます．&lt;/p&gt;
 &lt;h2 id="_2"&gt;テーマの導入&lt;/h2&gt;
 &lt;p&gt;ロシア製のテーマ&lt;a href="https://github.com/Samael500/w3-personal-blog"&gt;Samael500/w3-personal-blog&lt;/a&gt;をお借りします．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git clone https://github.com/Samael500/w3-personal-blog.git
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git clone https://github.com/Samael500/w3-personal-blog.git
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -165,7 +199,7 @@ makeコマンドやfabコマンドでHTMLを生成出来るようになるので
 &lt;h3 id="pelican_2"&gt;pelican にテーマを反映&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;にはサイトの設定を書き込む様になっています．&lt;br /&gt;
 以下の記述をして，pelicanに使うテーマのディレクトリを知らせる．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;THEME = &amp;#39;./w3-personal-blog-master&amp;#39;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;THEME = &amp;#39;./w3-personal-blog-master&amp;#39;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -178,31 +212,31 @@ makeコマンドやfabコマンドでHTMLを生成出来るようになるので
 &lt;h3 id="_4"&gt;ソース管理用リポジトリの作成&lt;/h3&gt;
 &lt;p&gt;webサイトの公開自体は&lt;code&gt;ユーザ名.github.io&lt;/code&gt;で行いますが，サイト生成に必要なMarkdownファイルやテーマ，pelicanの諸々のファイルは公開する必要が無いので，別のprivateなリポジトリで管理することにしました．&lt;/p&gt;
 &lt;p&gt;pelicanをセットアップした&lt;code&gt;blog/&lt;/code&gt;を管理用リポジトリで管理することにしました．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git init
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init
 git remote add origin 管理用リポジトリ
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;それと，.gitignoreは以下のように．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;*.pyc
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;*.pyc
 output/
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2 id="_5"&gt;サイトの公開&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://github.com/davisp/ghp-import"&gt;davisp/ghp-import&lt;/a&gt;というPythonモジュールを利用すれば，便利にGithub Pagesへのページ公開が行えます．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;pip install ghp-import
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install ghp-import
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;適当に記事を書いて，公開してみる.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make publish
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ make publish
 
-&lt;span class="c"&gt;# outputディレクトリをgh-pagesブランチに&lt;/span&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;ghp-import output
+&lt;span class="c1"&gt;# outputディレクトリをgh-pagesブランチに&lt;/span&gt;
+$ ghp-import output
 
-&lt;span class="c"&gt;# gh-pagesブランチを公開リポジトリのmasterへpush&lt;/span&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;git push https://github.com/DaikiShimada/daikishimada.github.io.git gh-pages:master
+&lt;span class="c1"&gt;# gh-pagesブランチを公開リポジトリのmasterへpush&lt;/span&gt;
+$ git push https://github.com/DaikiShimada/daikishimada.github.io.git gh-pages:master
 &lt;/pre&gt;&lt;/div&gt;
 
 

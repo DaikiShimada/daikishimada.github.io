@@ -159,19 +159,19 @@ reStructuredText か Markdownでページ内容を記述できるのが魅力的
 </ul>
 <h2 id="pelican_1">Pelicanの導入</h2>
 <p>pipを使えばあっという間．Markdownも入れておきます．</p>
-<div class="highlight"><pre><span class="nv">$ </span>pip install pelican Markdown
+<div class="highlight"><pre><span></span>$ pip install pelican Markdown
 </pre></div>
 
 
 <p>インタラクティブなコマンドツールで初期設定を済ましてくれます．</p>
-<div class="highlight"><pre><span class="nv">$ </span>mkdir ./blog
-<span class="nv">$ </span><span class="nb">cd </span>blog
-<span class="nv">$ </span>pelican-quickstart
+<div class="highlight"><pre><span></span>$ mkdir ./blog
+$ <span class="nb">cd</span> blog
+$ pelican-quickstart
 </pre></div>
 
 
 <p>以下のような形で質問に回答しました．</p>
-<div class="highlight"><pre>Welcome to pelican-quickstart v3.6.3.
+<div class="highlight"><pre><span></span>Welcome to pelican-quickstart v3.6.3.
 
 This script will help you create a new Pelican-based website.
 
@@ -202,7 +202,7 @@ needed by Pelican.
 
 
 <p>ここで，</p>
-<div class="highlight"><pre>&gt; &gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) y
+<div class="highlight"><pre><span></span>&gt; &gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) y
 </pre></div>
 
 
@@ -212,26 +212,26 @@ makeコマンドやfabコマンドでHTMLを生成出来るようになるので
 <p>ちなみに，ブログじゃないページは<code>content/pages/</code>にファイルを置いていけば良いみたいです．</p>
 <h3 id="_1">記事の生成と確認</h3>
 <p>Markdownからhtmlに書き出して欲しい時は，</p>
-<div class="highlight"><pre><span class="nv">$ </span>make html
+<div class="highlight"><pre><span></span>$ make html
 </pre></div>
 
 
 <p>でhtmlを吐き出してくれます．初期設定では<code>output/</code>以下に内容が出力されます．</p>
 <p>htmlの確認をする時は，</p>
-<div class="highlight"><pre><span class="nv">$ </span>make serve
+<div class="highlight"><pre><span></span>$ make serve
 </pre></div>
 
 
 <p>とすると，http://localhost:8000でwebサーバを走らせてくれるので，表示などをローカル環境で確認できます．</p>
 <p>公開用にhtmlを吐き出したい時は，</p>
-<div class="highlight"><pre><span class="nv">$ </span>make publish
+<div class="highlight"><pre><span></span>$ make publish
 </pre></div>
 
 
 <p>でやってくれます．</p>
 <h2 id="_2">テーマの導入</h2>
 <p>ロシア製のテーマ<a href="https://github.com/Samael500/w3-personal-blog">Samael500/w3-personal-blog</a>をお借りします．</p>
-<div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/Samael500/w3-personal-blog.git
+<div class="highlight"><pre><span></span>$ git clone https://github.com/Samael500/w3-personal-blog.git
 </pre></div>
 
 
@@ -240,7 +240,7 @@ makeコマンドやfabコマンドでHTMLを生成出来るようになるので
 <h3 id="pelican_2">pelican にテーマを反映</h3>
 <p><code>pelicanconf.py</code>にはサイトの設定を書き込む様になっています．<br />
 以下の記述をして，pelicanに使うテーマのディレクトリを知らせる．</p>
-<div class="highlight"><pre>THEME = &#39;./w3-personal-blog-master&#39;
+<div class="highlight"><pre><span></span>THEME = &#39;./w3-personal-blog-master&#39;
 </pre></div>
 
 
@@ -253,31 +253,31 @@ makeコマンドやfabコマンドでHTMLを生成出来るようになるので
 <h3 id="_4">ソース管理用リポジトリの作成</h3>
 <p>webサイトの公開自体は<code>ユーザ名.github.io</code>で行いますが，サイト生成に必要なMarkdownファイルやテーマ，pelicanの諸々のファイルは公開する必要が無いので，別のprivateなリポジトリで管理することにしました．</p>
 <p>pelicanをセットアップした<code>blog/</code>を管理用リポジトリで管理することにしました．</p>
-<div class="highlight"><pre>git init
+<div class="highlight"><pre><span></span>git init
 git remote add origin 管理用リポジトリ
 </pre></div>
 
 
 <p>それと，.gitignoreは以下のように．</p>
-<div class="highlight"><pre>*.pyc
+<div class="highlight"><pre><span></span>*.pyc
 output/
 </pre></div>
 
 
 <h2 id="_5">サイトの公開</h2>
 <p><a href="https://github.com/davisp/ghp-import">davisp/ghp-import</a>というPythonモジュールを利用すれば，便利にGithub Pagesへのページ公開が行えます．</p>
-<div class="highlight"><pre>pip install ghp-import
+<div class="highlight"><pre><span></span>pip install ghp-import
 </pre></div>
 
 
 <p>適当に記事を書いて，公開してみる.</p>
-<div class="highlight"><pre><span class="nv">$ </span>make publish
+<div class="highlight"><pre><span></span>$ make publish
 
-<span class="c"># outputディレクトリをgh-pagesブランチに</span>
-<span class="nv">$ </span>ghp-import output
+<span class="c1"># outputディレクトリをgh-pagesブランチに</span>
+$ ghp-import output
 
-<span class="c"># gh-pagesブランチを公開リポジトリのmasterへpush</span>
-<span class="nv">$ </span>git push https://github.com/DaikiShimada/daikishimada.github.io.git gh-pages:master
+<span class="c1"># gh-pagesブランチを公開リポジトリのmasterへpush</span>
+$ git push https://github.com/DaikiShimada/daikishimada.github.io.git gh-pages:master
 </pre></div>
 
 

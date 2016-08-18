@@ -156,21 +156,21 @@
 <p>プラグイン自体は導入出来たので，templatesのファイルをいじって実際にソーシャルボタンを設置します．</p>
 <p>今回使っているテーマは，<code>w3-personal-blog-master/templates/share.html</code>というソーシャルボタン用のhtmlファイルが用意されていたので，こちらを編集しました．</p>
 <p>設置に関する記述は本当に簡単で，</p>
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/theme/js/jquery.socialbutton-1.9.1.min.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/theme/js/jquery.socialbutton-1.9.1.min.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
-<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;sns-btn-list&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;hatena&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;tweet&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;facebook_like&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sns-btn-list&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hatena&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;tweet&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;facebook_like&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 
-<span class="nt">&lt;script&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
       <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.tweet&#39;</span><span class="p">).</span><span class="nx">socialbutton</span><span class="p">(</span><span class="s1">&#39;twitter&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">button</span><span class="o">:</span> <span class="s1">&#39;horizontal&#39;</span><span class="p">});</span>
       <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.facebook_like&#39;</span><span class="p">).</span><span class="nx">socialbutton</span><span class="p">(</span><span class="s1">&#39;facebook_like&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">button</span><span class="o">:</span> <span class="s1">&#39;button_count&#39;</span><span class="p">});</span>
       <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.hatena&#39;</span><span class="p">).</span><span class="nx">socialbutton</span><span class="p">(</span><span class="s1">&#39;hatena&#39;</span><span class="p">);</span>
   <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 
 
