@@ -1,39 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/programming.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-04-17T21:30:00+09:00</updated><entry><title>データ解析くらぶ#01に参加しました</title><link href="http://daikishimada.github.io/data_analysis_club_01.html" rel="alternate"></link><published>2016-04-17T21:30:00+09:00</published><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-04-17:data_analysis_club_01.html</id><summary type="html">&lt;p&gt;全脳アーキテクチャ若手の会が主催する&lt;a href="http://wbawakate.connpass.com/event/28894/"&gt;データ解析くらぶ#01&lt;/a&gt;に参加しました．&lt;br /&gt;
-全然攻略できなかったのですが，参加した感想と僕の手法の話をまとめておきます．&lt;/p&gt;
-&lt;h2 id="predicting-a-biological-response"&gt;Predicting a Biological Response&lt;/h2&gt;
-&lt;p&gt;今回のお題は，Kaggleの&lt;a href="https://www.kaggle.com/c/bioresponse"&gt;Predicting a Biological Response&lt;/a&gt;でした．&lt;br /&gt;
-当日にデータの中身を見ましたが，完全に数値化されたデータ（次元が1,000以上）に対して，生化学的活性（0/1）を分類する問題でした．&lt;/p&gt;
-&lt;p&gt;ひとまず，データの構造を確認するために，スタンダードだと思われる方法でデータを可視化してみました．&lt;br /&gt;
-っていうかそれしかやってない．&lt;/p&gt;
-&lt;h2 id="_1"&gt;データの可視化&lt;/h2&gt;
-&lt;p&gt;まずはPCAでデータをプロットしました．
-赤色の点が1と出力するべきデータ，青色の点が0と出力するべきデータ．&lt;/p&gt;
-&lt;p&gt;んんん…，クラスタみたいなものが見えるけど，線形なモデルだと厳しそう…&lt;/p&gt;
-&lt;p&gt;次は，t-SNEでデータをプロットしてみます．&lt;/p&gt;
-&lt;p&gt;この辺で，今回のデータはかなり難しいんじゃないかと気がつく．&lt;br /&gt;
-っていうか何か構造があるのかこれ．&lt;/p&gt;
-&lt;p&gt;次はAutoencoderを使って2次元に圧縮することで可視化を試みます．
-まずはいきなりぐしゃっと．&lt;/p&gt;
-&lt;h2 id="_2"&gt;とりあえず分類もやっとく&lt;/h2&gt;
-&lt;p&gt;実はこの可視化作業と並行して，多層ニューラルネットワークでの分類にチャレンジしてました．&lt;br /&gt;
-が，惨敗…．&lt;/p&gt;
-&lt;h2 id="_3"&gt;その他&lt;/h2&gt;
-&lt;p&gt;みなさん，PCAやt-SNEで次元を落としてからSVMやRandom Forest，XGBoostigのような機械学習手法を試してみたりしているようでした．&lt;br /&gt;
-データの入れ方を工夫しているようでしたが，生のまま学習器に入れたものが一番良かったなんていう報告もちらほら…  &lt;/p&gt;
-&lt;p&gt;一番良い性能を出していたのは，namakemonoさんによるStacked Generalizationを用いた手法でした．&lt;br /&gt;
-Stacked Generalizationはアンサンブル学習の手法で，様々なモデルの出力をさらに別の学習モデルに入れて学習させるという手法です．&lt;br /&gt;
-（&lt;a href="https://github.com/namakemono/kaggle-predicting-biological-response"&gt;GitHubでコードが公開されています&lt;/a&gt;）&lt;br /&gt;
-前に，画像認識系のコンペに出た時に知らず知らずのうちに使ってたのですが，ちゃんと名前が付いているのですね…．&lt;br /&gt;
-- &lt;a href="http://www.cs.utsa.edu/~bylander/cs6243/wolpert92stacked.pdf"&gt;【pdf注意】Stacked Generalization&lt;/a&gt;
-- &lt;a href="http://www.cs.waikato.ac.nz/~ihw/papers/97KMT-IHW-Stacked.pdf"&gt;【pdf注意】Stacked Generalization: when does it work?&lt;/a&gt;
-- &lt;a href="http://puyokw.hatenablog.com/entry/2015/12/12/090000"&gt;stacked generalization - puyokwの日記&lt;/a&gt;
-- &lt;a href="http://ibisforest.org/index.php?%E3%83%A1%E3%82%BF%E5%AD%A6%E7%BF%92"&gt;メタ学習 - 機械学習の「朱鷺の杜Wiki」&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="_4"&gt;感想&lt;/h2&gt;
-&lt;p&gt;可視化にばかり力を入れて，分類に時間を掛けられなかったことが残念ですが，&lt;br /&gt;
-普段画像処理ばかりやっている身としては新鮮（？）だったかなと．&lt;/p&gt;
-&lt;p&gt;こうやって時間を決めて何かに取り組むのは面白いですね．&lt;br /&gt;
-今回は，大学院生からポスドクの方，エンジニアの方までいろんなバックグラウンドの方が混ざってお話しながらできたので，勉強になりました．  &lt;/p&gt;</summary><category term="python"></category></entry><entry><title>Pelicanでソーシャルボタンを導入する</title><link href="http://daikishimada.github.io/pelican-social.html" rel="alternate"></link><published>2016-02-21T15:00:00+09:00</published><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-21:pelican-social.html</id><summary type="html">&lt;p&gt;Pelicanで作ってるブログの各記事ページにソーシャルボタンを導入するまで．
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/programming.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-02-21T15:00:00+09:00</updated><entry><title>Pelicanでソーシャルボタンを導入する</title><link href="http://daikishimada.github.io/pelican-social.html" rel="alternate"></link><published>2016-02-21T15:00:00+09:00</published><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-21:pelican-social.html</id><summary type="html">&lt;p&gt;Pelicanで作ってるブログの各記事ページにソーシャルボタンを導入するまで．
 テーマに付属しているソーシャルボタンははてブボタンがデフォルトで使えなくて，無理やり入れるとレイアウトが崩れるので，プラグインで簡単に入れてみた．&lt;/p&gt;
 &lt;p&gt;基本的に前提として，このブログをセットアップした時のテーマ・設定での導入記録です．&lt;/p&gt;
 &lt;h2 id="jquerysocialbutton"&gt;jQuery.socialbuttonプラグインの導入&lt;/h2&gt;
