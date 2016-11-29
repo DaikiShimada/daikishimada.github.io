@@ -1,5 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/all.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-02-21T15:00:00+09:00</updated><entry><title>Pelicanでソーシャルボタンを導入する</title><link href="http://daikishimada.github.io/pelican-social.html" rel="alternate"></link><published>2016-02-21T15:00:00+09:00</published><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-21:pelican-social.html</id><summary type="html">&lt;p&gt;Pelicanで作ってるブログの各記事ページにソーシャルボタンを導入するまで．
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Futon note</title><link href="http://daikishimada.github.io/" rel="alternate"></link><link href="http://daikishimada.github.io/feeds/all.atom.xml" rel="self"></link><id>http://daikishimada.github.io/</id><updated>2016-11-29T22:00:00+09:00</updated><entry><title>第12回ファジィ学問塾に参加した</title><link href="http://daikishimada.github.io/fuzzy-school.html" rel="alternate"></link><published>2016-11-29T22:00:00+09:00</published><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-11-29:fuzzy-school.html</id><summary type="html">&lt;h2 id="12"&gt;第12回ファジィ学問塾&lt;/h2&gt;
+&lt;p&gt;11月26日〜27日の1泊2日の日程で，
+&lt;a href="http://www.j-soft.org/fuzzyschool2016/"&gt;第12回ファジィ学問塾&lt;/a&gt;
+が行われ，参加してきた．&lt;/p&gt;
+&lt;p&gt;参加者は21人でそのほとんどが学生（学部〜博士課程）だった．&lt;br /&gt;
+参加した人みんながDeep Learningを研究テーマにしているわけでなく（むしろ少数派），&lt;br /&gt;
+信号解析とか，ロボット制御とか，情報系ではない分野など，とても多様性があって面白かった．&lt;/p&gt;
+&lt;p&gt;今回は「Deep Learning」がテーマということで，
+初日に，講師の先生方からBack Propagationの基礎から実際にTensorFlowを使って手を動かすまでレクチャーがあった．&lt;/p&gt;
+&lt;p&gt;中でも，Googleの佐藤氏によるGoogle社内でのDeep Learningに関する取り組みは，&lt;br /&gt;
+さすが世界でも飛び抜けて研究開発を進めている企業の一端が垣間見えた感じで，&lt;br /&gt;
+これは計算機を沢山まわさないといけない分野では勝ち目ないなと痛感させられた．&lt;br /&gt;
+しかし，ユーザ目線で見てみると，先日の&lt;a href="https://japan.googleblog.com/2016/11/google.html"&gt;ニューラル翻訳&lt;/a&gt;をはじめとして，&lt;br /&gt;
+これまで以上に便利で新しいサービスが出て来そうで，わくわくする．&lt;/p&gt;
+&lt;p&gt;日程の後半戦は主に，手を動かす演習で，&lt;br /&gt;
+- パラメータを変更することによる性能変化を調査せよ
+- 学習器がどのような特徴量を用いて識別しているか調査せよ
+- 自由課題&lt;/p&gt;
+&lt;p&gt;のうち2つを選択して，4〜5人の班ごとに取り組むというものだった．&lt;/p&gt;
+&lt;h2 id="_1"&gt;やったこと&lt;/h2&gt;
+&lt;p&gt;そんなわけで，私の班では最初の2つを選択して，余力があれば自由課題にも挑戦するという作戦に．&lt;br /&gt;
+私は，Convolutional Neural Networks(CNN)の特徴量解析ということで，&lt;br /&gt;
+任意の入力画像を特定のクラスに分類されるように最適化する手法を実装してみた．&lt;/p&gt;
+&lt;h3 id="inverting-visual-representaion"&gt;Inverting Visual Representaion&lt;/h3&gt;
+&lt;p&gt;今回実装した手法は，「&lt;a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html"&gt;Deep Dream&lt;/a&gt;のアレ」というと界隈の人には伝わるけども，&lt;br /&gt;
+ちゃんというと，__「Inverting Visual Representaion」__と呼ばれることが多い．&lt;/p&gt;
+&lt;p&gt;手法自体は，
+ある画像Xを学習済みCNNモデルfに投げて得られる結果f(X)と任意の教師ラベルdとの誤差e(f(X), d)を最小化するように，
+画像Xを最適化するというものだ．&lt;/p&gt;
+&lt;p&gt;&lt;img alt="InvertingVisualRep" src="http://daikishimada.github.io/theme/images/InvertingVisualRep.png" /&gt;&lt;/p&gt;
+&lt;p&gt;発想的にはそんな最近のものではないと思うけど，文献でいうと，&lt;br /&gt;
+- &lt;a href="http://igva2012.wikispaces.asu.edu/file/view/Erhan+2009+Visualizing+higher+layer+features+of+a+deep+network.pdf"&gt;D. Erhan, et al. Visualizing higher-layer features of a deep network. Technical Report 1341, University of Montreal, 2009.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;で今の話について触れられている．&lt;br /&gt;
+最近の文献であれば，
+- &lt;a href="https://arxiv.org/abs/1312.6034"&gt;K. Simonyan, et al. Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps. arXiv: 1312.6034, 2013.&lt;/a&gt;
+- &lt;a href="https://arxiv.org/abs/1506.02753"&gt;A. Dosovitskiy, et al. Inverting Visual Representations with Convolutional Networks. arXiv: 1506.02753, 2015.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;あたりで，一般物体認識課題を学習させたネットワークでの実験結果が報告されている．&lt;br /&gt;
+（Simonyanらの文献は2節に，Dosovitskiyらの文献では誤差関数に正則化項をつけることで人間により見やすい画像を生成している）&lt;/p&gt;
+&lt;p&gt;さらに，この原理を応用して「Adversarial Examples」と呼ばれる，「ネットワークを間違えさせるデータ」を生成する研究も進んでいる．&lt;br /&gt;
+- &lt;a href="https://arxiv.org/abs/1412.6572"&gt;I. Goodfellow, et al. Explaining and Harnessing Adversarial Examples. arXiv; 1412.6572, 2014.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;このへんの特徴解析あたりの話は，前に某所で発表した資料でも触れている．
+- &lt;a href="http://daikishimada.github.io/wbaflcnn.html"&gt;Deep Learning のトレンドについて喋ってきた | Futon note&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="_2"&gt;結果&lt;/h3&gt;
+&lt;p&gt;前置きが長くなったけど，実際に演習でMNISTをそこそこ（テストデータに対して98%くらい）学習させたネットワークについてやってみた結果がこれ．&lt;/p&gt;
+&lt;p&gt;&lt;img alt="InvertingMNIST01" src="http://daikishimada.github.io/theme/images/InvertingMNIST01.png" /&gt;&lt;br /&gt;
+&lt;img alt="InvertingMNIST02" src="http://daikishimada.github.io/theme/images/InvertingMNIST02.png" /&gt;&lt;br /&gt;
+&lt;img alt="InvertingMNIST03" src="http://daikishimada.github.io/theme/images/InvertingMNIST03.png" /&gt;&lt;/p&gt;
+&lt;p&gt;一様乱数を入力にすると，数字によってはそれっぽく見えないこともないけど，全体的にとてもよく上手くいっていない．&lt;br /&gt;
+入力画像自体はかなり収束しちゃっていたので，そもそももっとネットワークを学習させておくべきだったみたいだ．&lt;/p&gt;
+&lt;p&gt;一方で，学習画像全体の平均画像や，学習画像中に含まれる1の平均画像を入力した場合ついては，面白い結果が得られている．&lt;br /&gt;
+学習画像全体の平均画像を入力した場合は，それぞれの数字に見えるようになっているし，
+1を他の数字画像にしてもらったときに，どういう風に画像が変わったかを観察するとCNNがどんな特徴で識別しているか読み取れる．&lt;/p&gt;
+&lt;p&gt;最終的には，これを更に発展させた内容まで持っていって見たかったけれども，時間がなかったので断念…．&lt;/p&gt;
+&lt;h3 id="_3"&gt;コード&lt;/h3&gt;
+&lt;p&gt;一応試せるようにコードを公開しておいた．&lt;br /&gt;
+ちなみに，様々な問題があってTensorFlowではなくChainerで実装した…．許して欲しい…．笑  &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/DaikiShimada/soft-seminor"&gt;DaikiShimada/soft-seminor: Inverting Visual Representation in Fuzzy Seminor 2016&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;TensorFlowでやってみたい人向けには，アイドル画像識別で似たことをしている人がいるので，参照してみるとよいかも．&lt;br /&gt;
+&lt;a href="http://memo.sugyan.com/entry/2016/07/10/005512"&gt;TensorFlowで顔識別モデルに最適化した入力画像を生成する - すぎゃーんメモ&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="_4"&gt;感想&lt;/h2&gt;
+&lt;p&gt;最初にも言ったけども，もともと情報分野に親しくない人や，Deep Learningに触れたことのない参加者が多かったので，&lt;br /&gt;
+そういう人にはややハードな日程だった気もする．&lt;/p&gt;
+&lt;p&gt;でもこういう風に短期間にドカッと知識を叩き込むのもいいかな．&lt;br /&gt;
+全国からくる参加者とも交流できるし，講師陣，サポートしてくださる先生方とも交流できる．&lt;br /&gt;
+そういう意味では，学会がこういう場を提供してくれるのは貴重だと思うので，&lt;br /&gt;
+もし来年も同じような催しがあれば，興味ある人は参加してみるといいかも．&lt;/p&gt;
+&lt;h2 id="_5"&gt;参考文献&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://igva2012.wikispaces.asu.edu/file/view/Erhan+2009+Visualizing+higher+layer+features+of+a+deep+network.pdf"&gt;D. Erhan, et al. Visualizing higher-layer features of a deep network. Technical Report 1341, University of Montreal, 2009.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://arxiv.org/abs/1312.6034"&gt;K. Simonyan, et al. Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps. arXiv: 1312.6034, 2013.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://arxiv.org/abs/1506.02753"&gt;A. Dosovitskiy, et al. Inverting Visual Representations with Convolutional Networks. arXiv: 1506.02753, 2015.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://arxiv.org/abs/1412.6572"&gt;I. Goodfellow, et al. Explaining and Harnessing Adversarial Examples. arXiv; 1412.6572, 2014.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://daikishimada.github.io/wbaflcnn.html"&gt;Deep Learning のトレンドについて喋ってきた | Futon note&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://memo.sugyan.com/entry/2016/07/10/005512"&gt;TensorFlowで顔識別モデルに最適化した入力画像を生成する - すぎゃーんメモ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="fuzzytheory"></category><category term="deeplearning"></category></entry><entry><title>Pelicanでソーシャルボタンを導入する</title><link href="http://daikishimada.github.io/pelican-social.html" rel="alternate"></link><published>2016-02-21T15:00:00+09:00</published><author><name>DaikiShimada</name></author><id>tag:daikishimada.github.io,2016-02-21:pelican-social.html</id><summary type="html">&lt;p&gt;Pelicanで作ってるブログの各記事ページにソーシャルボタンを導入するまで．
 テーマに付属しているソーシャルボタンははてブボタンがデフォルトで使えなくて，無理やり入れるとレイアウトが崩れるので，プラグインで簡単に入れてみた．&lt;/p&gt;
 &lt;p&gt;基本的に前提として，このブログをセットアップした時のテーマ・設定での導入記録です．&lt;/p&gt;
 &lt;h2 id="jquerysocialbutton"&gt;jQuery.socialbuttonプラグインの導入&lt;/h2&gt;
