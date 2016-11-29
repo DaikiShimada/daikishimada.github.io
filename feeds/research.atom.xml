@@ -3,15 +3,15 @@
 &lt;p&gt;11月26日〜27日の1泊2日の日程で，
 &lt;a href="http://www.j-soft.org/fuzzyschool2016/"&gt;第12回ファジィ学問塾&lt;/a&gt;
 が行われ，参加してきた．&lt;/p&gt;
-&lt;p&gt;参加者は21人でそのほとんどが学生（学部〜博士課程）だった．&lt;br /&gt;
-参加した人みんながDeep Learningを研究テーマにしているわけでなく（むしろ少数派），&lt;br /&gt;
+&lt;p&gt;参加者は21人でそのほとんどが学生（学部〜博士課程）だった．&lt;/p&gt;
+&lt;p&gt;参加した人みんながDeep Learningを研究テーマにしているわけでなく（むしろ少数派），&lt;br /&gt;
 信号解析とか，ロボット制御とか，情報系ではない分野など，とても多様性があって面白かった．&lt;/p&gt;
-&lt;p&gt;今回は「Deep Learning」がテーマということで，
-初日に，講師の先生方からBack Propagationの基礎から実際にTensorFlowを使って手を動かすまでレクチャーがあった．&lt;/p&gt;
+&lt;p&gt;今回は「Deep Learning」がテーマということで，講師の先生方からBack Propagationの基礎から&lt;br /&gt;
+実際にTensorFlowを使って手を動かすまでレクチャーがあった．&lt;/p&gt;
 &lt;p&gt;中でも，Googleの佐藤氏によるGoogle社内でのDeep Learningに関する取り組みは，&lt;br /&gt;
 さすが世界でも飛び抜けて研究開発を進めている企業の一端が垣間見えた感じで，&lt;br /&gt;
-これは計算機を沢山まわさないといけない分野では勝ち目ないなと痛感させられた．&lt;br /&gt;
-しかし，ユーザ目線で見てみると，先日の&lt;a href="https://japan.googleblog.com/2016/11/google.html"&gt;ニューラル翻訳&lt;/a&gt;をはじめとして，&lt;br /&gt;
+これは計算機を沢山まわさないといけない分野では勝ち目ないなと痛感させられた．&lt;/p&gt;
+&lt;p&gt;しかし，ユーザ目線で見てみると，先日の&lt;a href="https://japan.googleblog.com/2016/11/google.html"&gt;ニューラル翻訳&lt;/a&gt;をはじめとして，&lt;br /&gt;
 これまで以上に便利で新しいサービスが出て来そうで，わくわくする．&lt;/p&gt;
 &lt;p&gt;日程の後半戦は主に，手を動かす演習で，&lt;/p&gt;
 &lt;ul&gt;
@@ -21,14 +21,14 @@
 &lt;/ul&gt;
 &lt;p&gt;のうち2つを選択して，4〜5人の班ごとに取り組むというものだった．&lt;/p&gt;
 &lt;h2 id="_1"&gt;やったこと&lt;/h2&gt;
-&lt;p&gt;そんなわけで，私の班では最初の2つを選択して，余力があれば自由課題にも挑戦するという作戦に．&lt;br /&gt;
-私は，Convolutional Neural Networks(CNN)の特徴量解析ということで，&lt;br /&gt;
+&lt;p&gt;そんなわけで，私の班では最初の2つを選択して，余力があれば自由課題にも挑戦するという作戦に．&lt;/p&gt;
+&lt;p&gt;私は，Convolutional Neural Networks(CNN)の特徴量解析ということで，&lt;br /&gt;
 任意の入力画像を特定のクラスに分類されるように最適化する手法を実装してみた．&lt;/p&gt;
 &lt;h3 id="inverting-visual-representaion"&gt;Inverting Visual Representaion&lt;/h3&gt;
 &lt;p&gt;今回実装した手法は，「&lt;a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html"&gt;Deep Dream&lt;/a&gt;のアレ」というと界隈の人には伝わるけども，&lt;br /&gt;
 ちゃんというと，「Inverting Visual Representaion」と呼ばれることが多い．&lt;/p&gt;
 &lt;p&gt;手法自体は，
-ある画像Xを学習済みCNNモデルfに投げて得られる結果f(X)と任意の教師ラベルdとの誤差e(f(X), d)を最小化するように，
+ある画像Xを学習済みCNNモデルyに投げて得られる結果y(X)と任意の教師ラベルdとの誤差e(f(X), d)を最小化するように，
 画像Xを最適化するというものだ．&lt;/p&gt;
 &lt;p&gt;&lt;img alt="InvertingVisualRep" src="http://daikishimada.github.io/image/InvertingVisualRep.png" /&gt;&lt;/p&gt;
 &lt;p&gt;発想的にはそんな最近のものではないと思うけど，文献でいうと，  &lt;/p&gt;
@@ -56,10 +56,10 @@
 &lt;p&gt;&lt;img alt="InvertingMNIST01" src="http://daikishimada.github.io/image/InvertingMNIST01.png" /&gt;&lt;br /&gt;
 &lt;img alt="InvertingMNIST02" src="http://daikishimada.github.io/image/InvertingMNIST02.png" /&gt;&lt;br /&gt;
 &lt;img alt="InvertingMNIST03" src="http://daikishimada.github.io/image/InvertingMNIST03.png" /&gt;&lt;/p&gt;
-&lt;p&gt;一様乱数を入力にすると，数字によってはそれっぽく見えないこともないけど，全体的にとてもよく上手くいっていない．&lt;br /&gt;
-入力画像自体はかなり収束しちゃっていたので，そもそももっとネットワークを学習させておくべきだったみたいだ．&lt;/p&gt;
-&lt;p&gt;一方で，学習画像全体の平均画像や，学習画像中に含まれる1の平均画像を入力した場合ついては，面白い結果が得られている．&lt;br /&gt;
-学習画像全体の平均画像を入力した場合は，それぞれの数字に見えるようになっているし，
+&lt;p&gt;一様乱数を入力にすると，数字によってはそれっぽく見えないこともないけど，全体的にとてもよく上手くいっていない．&lt;/p&gt;
+&lt;p&gt;入力画像自体はかなり収束しちゃっていたので，そもそももっとネットワークを学習させておくべきだったみたいだ．&lt;/p&gt;
+&lt;p&gt;一方で，学習画像全体の平均画像や，学習画像中に含まれる1の平均画像を入力した場合ついては，面白い結果が得られている．&lt;/p&gt;
+&lt;p&gt;学習画像全体の平均画像を入力した場合は，それぞれの数字に見えるようになっているし，&lt;br /&gt;
 1を他の数字画像にしてもらったときに，どういう風に画像が変わったかを観察するとCNNがどんな特徴で識別しているか読み取れる．&lt;/p&gt;
 &lt;p&gt;最終的には，これを更に発展させた内容まで持っていって見たかったけれども，時間がなかったので断念…．&lt;/p&gt;
 &lt;h3 id="_3"&gt;コード&lt;/h3&gt;
@@ -71,8 +71,8 @@
 &lt;h2 id="_4"&gt;感想&lt;/h2&gt;
 &lt;p&gt;最初にも言ったけども，もともと情報分野に親しくない人や，Deep Learningに触れたことのない参加者が多かったので，&lt;br /&gt;
 そういう人にはややハードな日程だった気もする．&lt;/p&gt;
-&lt;p&gt;でもこういう風に短期間にドカッと知識を叩き込むのもいいかな．&lt;br /&gt;
-全国からくる参加者とも交流できるし，講師陣，サポートしてくださる先生方とも交流できる．&lt;br /&gt;
+&lt;p&gt;でもこういう風に短期間にドカッと知識を叩き込むのもいいかな．&lt;/p&gt;
+&lt;p&gt;全国からくる参加者とも交流できるし，講師陣，サポートしてくださる先生方とも交流できる．&lt;br /&gt;
 そういう意味では，学会がこういう場を提供してくれるのは貴重だと思うので，&lt;br /&gt;
 もし来年も同じような催しがあれば，興味ある人は参加してみるといいかも．&lt;/p&gt;
 &lt;h2 id="_5"&gt;参考文献&lt;/h2&gt;
